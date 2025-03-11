@@ -3,12 +3,21 @@ const path = require('path');
 
 const app = express();
 
-// Serve static files (like HTML, CSS, JS) from a folder called 'public'
-app.use(express.static(path.join(__dirname, 'public')));
+// Serve static files from the current directory
+app.use(express.static(__dirname));
 
 // Define a route for the home page
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+// Define routes for other pages
+app.get('/aboutMe.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'aboutMe.html'));
+});
+
+app.get('/projects.html', (req, res) => {
+    res.sendFile(path.join(__dirname, 'projects.html'));
 });
 
 // Set the port
