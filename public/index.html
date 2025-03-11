@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Node Project</title>
+    <style>
+        /* Bestaande CSS */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&display=swap'); /* Orbitron font importeren */
+
+        /* Simple Navbar Styling */
+        body {
+            font-family: Arial, sans-serif; /* Gebruik Arial voor de body */
+            margin: 0;
+            padding: 0;
+            background-image: url('https://i.redd.it/steam-background-gif-dump-use-them-for-any-purpose-the-main-v0-2lkcq11e8i9b1.gif?width=600&auto=webp&s=4b92d51660b515f8d01572638ce10274be85fa27');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Prevent scrolling of the whole page */
+        }
+
+        /* Navbar Styling */
+        nav {
+            background: radial-gradient(circle, rgba(144, 238, 144, 0.85) 0%, rgba(144, 238, 144, 0.65) 20%, rgba(144, 238, 144, 0.45) 40%, rgba(144, 238, 144, 0.25) 60%, rgba(144, 238, 144, 0.15) 80%, rgba(144, 238, 144, 0.05) 90%, rgba(144, 238, 144, 0.001) 100%);
+            overflow: hidden;
+            z-index: 1;
+            position: fixed;
+            top: 0;
+            width: 60%; /* Beperk de breedte van de navbar tot 60% van de pagina */
+            left: 21%; /* Iets naar links verplaatst */
+            display: flex;
+            justify-content: space-around; /* Zorg ervoor dat de links evenredig worden verdeeld */
+            align-items: center;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            font-family: 'Orbitron', sans-serif; /* Orbitron font toegevoegd */
+            font-size: 28px; /* Grotere fontgrootte voor de knoppen */
+            min-width: 120px; /* Zorg ervoor dat de knoppen altijd dezelfde breedte hebben */
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Center Circle Styling */
+        .center-circle {
+            width: 700px; /* Larger size */
+            height: 700px; /* Larger size */
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(144, 238, 144, 0.6) 0%, rgba(144, 238, 144, 0.4) 25%, rgba(144, 238, 144, 0.2) 50%, rgba(144, 238, 144, 0.1) 75%, rgba(144, 238, 144, 0.05) 100%); /* Multi-layer transparency */
+            overflow: hidden;
+            padding: 30px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-y: auto; /* Allow vertical scrolling of text */
+            max-width: 100%;
+            margin-top: -50px; /* Significantly moved the circle up */
+        }
+
+        /* Content inside the circle */
+        .center-circle h1, .center-circle p {
+            margin: 0;
+            text-align: center; /* Center text horizontally */
+            font-size: 24px; /* Larger text size */
+            line-height: 1.8;
+            color: black; /* Black text */
+            max-width: 90%; /* Ensure text doesn't overflow */
+            padding-right: 20px; /* Add padding to the right side */
+            word-wrap: break-word; /* Prevent overflow */
+            padding-left: 50px; /* More left padding for better fit */
+            margin-bottom: 15px; /* Add space between paragraphs */
+            font-family: 'Orbitron', sans-serif; /* Gebruik Orbitron voor de tekst in de cirkel */
+        }
+
+        /* Scrollable content within the circle */
+        .scrollable-content {
+            max-height: 500px; /* Adjust scrollable height */
+            overflow-y: scroll; /* Enable scrolling */
+            padding-right: 20px; /* Prevent content from being cut off */
+            max-width: 100%;
+        }
+
+        /* Adding some margin to the body for spacing */
+        body {
+            padding-top: 60px; /* To keep the content below the fixed navbar */
+        }
+
+        /* Portfolio Text Styling */
+        .portfolio-text {
+            position: absolute;
+            top: 10%; /* Adjust this value for vertical positioning */
+            left: 50%; /* Perfectly centered horizontally */
+            transform: translateX(-50%); /* Fine-tune centering */
+            font-family: 'Orbitron', sans-serif; /* Sci-fi font */
+            font-size: 120px; /* Large text */
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.8); /* Slightly transparent black */
+            z-index: 2; /* Ensure it stays on top of other elements */
+        }
+
+        /* Extra styling voor de "Already there" tekst */
+        .already-there {
+            font-size: 18px; /* Maak de tekst kleiner */
+            font-weight: normal; /* Zorg dat het niet vetgedrukt is */
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+    <a href="index.html" id="home-link">Home</a>
+    <a href="aboutMe.html">About Me</a>
+    <a href="projects.html">Projects</a>
+</nav>
+
+<!-- Portfolio Text -->
+<div class="portfolio-text">
+    Portfolio
+</div>
+
+<!-- Center Circle Content -->
+<div class="center-circle">
+    <div class="scrollable-content">
+        <h1>Hallo! Ik ben Sem van Veen.</h1>
+        <p>Ik studeer Creative Media and Game Technologies en ik heb het hier echt naar mijn zin. Ik ben op zoek naar een afstudeerstage waar ik mijn creatieve ideeën kan uitwerken, en waar design en innovatie belangrijk zijn.</p>
+
+        <p>Ik hou ervan om nieuwe dingen te maken, dingen die soms een beetje anders zijn dan wat je normaal ziet. Het is voor mij een uitdaging om mijn ideeën om te zetten in iets dat mensen echt kunnen gebruiken en beleven.</p>
+
+        <p>De afgelopen tijd heb ik aan verschillende projecten gewerkt, zoals het maken van een game waaraan ik recent heb bijgedragen. In de sectie *"Projecten"* kun je meer zien over wat ik heb gemaakt. Als je meer over mij wilt weten, kun je alles lezen in de *"About Me"* sectie.</p>
+
+        <p>Ik heb deze website gecreëerd als een portfolio om te laten zien waar mijn interesses liggen en waar ik voor sta. Het is voor mij belangrijk om te laten zien dat ik van design hou en dat ik elke kans die ik krijg, volledig benut.</p>
+
+        <p>Ik hoop met mijn werk te inspireren en mijn passie te delen met anderen. Mijn doel is om mijn manier van werken te laten zien, en hopelijk kan ik hiermee een plek vinden bij een bedrijf waar ik verder kan groeien.</p>
+
+        <p>Bedankt voor het bekijken van mijn portfolio! Ik hoop dat je iets interessants vindt en dat we misschien ooit kunnen samenwerken. Als je meer wilt weten of contact met mij wilt opnemen, aarzel dan niet om dat te doen. Ik kijk ernaar uit om te horen van je!</p>
+    </div>
+</div>
+
+<script>
+    // JavaScript om te controleren of we al op de home pagina zijn
+    document.getElementById("home-link").addEventListener("click", function(event) {
+        // Check of de huidige pagina al de home pagina is
+        if (window.location.pathname === "/index.html" || window.location.pathname === "/") {
+            // Voorkom de standaard navigatie
+            event.preventDefault();
+            // Vervang de tekst van de Home link met "Already there"
+            var homeLink = document.getElementById("home-link");
+            homeLink.textContent = "Already there";
+            // Voeg een extra span toe om de tekst van "Already there" kleiner te maken
+            homeLink.innerHTML = '<span class="already-there">Already there</span>';
+            // Zet de tekst weer terug naar "Home" na 2 seconden
+            setTimeout(function() {
+                homeLink.innerHTML = 'Home';
+            }, 2000);
+        }
+    });
+</script>
+
+</body>
+</html>

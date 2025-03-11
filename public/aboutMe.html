@@ -1,0 +1,64 @@
+<!-- public/aboutMe.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Me</title>
+    <style>
+        /* Same Navbar Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6ee3f4d4-8cc0-4b77-b9a0-ed16b350bf18/dg7egt3-c4e91a6d-c40c-43f2-b256-7466bcc9a126.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzZlZTNmNGQ0LThjYzAtNGI3Ny1iOWEwLWVkMTZiMzUwYmYxOFwvZGc3ZWd0My1jNGU5MWE2ZC1jNDBjLTQzZjItYjI1Ni03NDY2YmNjOWExMjYuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.1pkj9fs2XuJH77mrn_vRkxUUrtWGtz_b6aMDl-mM4js');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            z-index: 1; /* Ensure the top navbar is above the sidebar */
+            position: relative;
+            display: flex;
+            justify-content: center; /* Center the navbar items */
+            align-items: center;
+            padding-left: 60px; /* Ensure there's space for the toggle button */
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Content Styling */
+        .content {
+            margin-top: 60px; /* Ensure content doesn't overlap with navbar */
+            margin-left: 220px; /* Match the left margin to the vertical navbar */
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+    <a href="index.html">Home</a>
+    <a href="aboutMe.html">About Me</a>
+    <a href="projects.html">Projects</a>
+</nav>
+
+<!-- Main Content -->
+<div class="content">
+    <h1>About Me</h1>
+    <p>This is the About Me page where you can introduce yourself or add your bio.</p>
+</div>
+
+</body>
+</html>
