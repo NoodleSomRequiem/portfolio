@@ -55,11 +55,10 @@
             background-color: #ddd;
             color: black;
         }
-
-        /* Center Circle Styling */
+        /* Center Circle Content */
         .center-circle {
-            width: 700px; /* Larger size */
-            height: 700px; /* Larger size */
+            width: 600px; /* Slightly bigger size for the circle */
+            height: 600px; /* Slightly bigger size for the circle */
             border-radius: 50%;
             background: radial-gradient(circle, rgba(144, 238, 144, 0.6) 0%, rgba(144, 238, 144, 0.4) 25%, rgba(144, 238, 144, 0.2) 50%, rgba(144, 238, 144, 0.1) 75%, rgba(144, 238, 144, 0.05) 100%); /* Multi-layer transparency */
             overflow: hidden;
@@ -67,13 +66,11 @@
             position: relative;
             display: flex;
             justify-content: center;
-            align-items: center;
-            overflow-y: auto; /* Allow vertical scrolling of text */
+            align-items: flex-start; /* Align content a little above center */
             max-width: 100%;
-            margin-top: -50px; /* Significantly moved the circle up */
+            margin-top: 100px; /* Move the entire circle content further down the page */
         }
 
-        /* Content inside the circle */
         .center-circle h1, .center-circle p {
             margin: 0;
             text-align: center; /* Center text horizontally */
@@ -88,23 +85,40 @@
             font-family: 'Orbitron', sans-serif; /* Gebruik Orbitron voor de tekst in de cirkel */
         }
 
-        /* Scrollable content within the circle */
+
+        /* Move the title down more */
+        .center-circle h1 {
+            margin-top: 15px; /* Adjust this value to move the title further up */
+        }
+
+        /* Scrollable content inside the circle */
         .scrollable-content {
-            max-height: 500px; /* Adjust scrollable height */
-            overflow-y: scroll; /* Enable scrolling */
-            padding-right: 20px; /* Prevent content from being cut off */
+            max-height: 600px; /* Increased height to show more content before scrolling */
+            overflow-y: auto; /* Allow vertical scrolling of text */
+            padding-right: 20px;
             max-width: 100%;
         }
 
-        /* Adding some margin to the body for spacing */
-        body {
-            padding-top: 60px; /* To keep the content below the fixed navbar */
+
+        /* Remove the white part of the scroll bar and make the grey part smaller */
+        .scrollable-content::-webkit-scrollbar {
+            width: 6px; /* Make the scrollbar smaller */
+            height: 1px;
+        }
+
+        .scrollable-content::-webkit-scrollbar-track {
+            background: transparent; /* Remove the white part of the scrollbar */
+        }
+
+        .scrollable-content::-webkit-scrollbar-thumb {
+            background-color: rgba(144, 238, 144, 0.6); /* Light greenish thumb color */
+            border-radius: 10px; /* Rounded corners for the thumb */
         }
 
         /* Portfolio Text Styling */
         .portfolio-text {
             position: absolute;
-            top: 10%; /* Adjust this value for vertical positioning */
+            top: 7%; /* Adjust this value for vertical positioning */
             left: 50%; /* Perfectly centered horizontally */
             transform: translateX(-50%); /* Fine-tune centering */
             font-family: 'Orbitron', sans-serif; /* Sci-fi font */
@@ -114,11 +128,49 @@
             z-index: 2; /* Ensure it stays on top of other elements */
         }
 
-        /* Extra styling voor de "Already there" tekst */
-        .already-there {
-            font-size: 18px; /* Maak de tekst kleiner */
-            font-weight: normal; /* Zorg dat het niet vetgedrukt is */
-            color: white;
+        /* Meteorites Styling */
+        .meteorite {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: url('https://opengameart.org/sites/default/files/Asteroid%20Brown.png') no-repeat center center;
+            background-size: cover;
+            border-radius: 50%;
+            animation: moveMeteorite 10s linear infinite, rotateMeteorite 8s linear infinite;
+            z-index: 10; /* Ensure meteorites are above background but below content */
+        }
+
+        /* Meteorite Movement */
+        @keyframes moveMeteorite {
+            0% {
+                top: -50px;
+                left: 100%;
+            }
+            100% {
+                top: 100%;
+                left: -50px;
+            }
+        }
+
+        /* Meteorite Rotation */
+        @keyframes rotateMeteorite {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Explosion Styling */
+        .explosion {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: url('https://toppng.com/uploads/preview/explosion-pixel-art-115633555132uir2zl9fd.png') no-repeat center center;
+            background-size: cover;
+            display: none;
+            z-index: 20; /* Explosion should appear above meteorites and content */
         }
     </style>
 </head>
@@ -141,37 +193,118 @@
     <div class="scrollable-content">
         <h1>Hallo! Ik ben Sem van Veen.</h1>
         <p>Ik studeer Creative Media and Game Technologies en ik heb het hier echt naar mijn zin. Ik ben op zoek naar een afstudeerstage waar ik mijn creatieve ideeën kan uitwerken, en waar design en innovatie belangrijk zijn.</p>
-
         <p>Ik hou ervan om nieuwe dingen te maken, dingen die soms een beetje anders zijn dan wat je normaal ziet. Het is voor mij een uitdaging om mijn ideeën om te zetten in iets dat mensen echt kunnen gebruiken en beleven.</p>
-
         <p>De afgelopen tijd heb ik aan verschillende projecten gewerkt, zoals het maken van een game waaraan ik recent heb bijgedragen. In de sectie *"Projecten"* kun je meer zien over wat ik heb gemaakt. Als je meer over mij wilt weten, kun je alles lezen in de *"About Me"* sectie.</p>
-
         <p>Ik heb deze website gecreëerd als een portfolio om te laten zien waar mijn interesses liggen en waar ik voor sta. Het is voor mij belangrijk om te laten zien dat ik van design hou en dat ik elke kans die ik krijg, volledig benut.</p>
-
         <p>Ik hoop met mijn werk te inspireren en mijn passie te delen met anderen. Mijn doel is om mijn manier van werken te laten zien, en hopelijk kan ik hiermee een plek vinden bij een bedrijf waar ik verder kan groeien.</p>
-
         <p>Bedankt voor het bekijken van mijn portfolio! Ik hoop dat je iets interessants vindt en dat we misschien ooit kunnen samenwerken. Als je meer wilt weten of contact met mij wilt opnemen, aarzel dan niet om dat te doen. Ik kijk ernaar uit om te horen van je!</p>
     </div>
 </div>
 
+<!-- JavaScript for Meteorites and Explosion -->
 <script>
-    // JavaScript om te controleren of we al op de home pagina zijn
-    document.getElementById("home-link").addEventListener("click", function(event) {
-        // Check of de huidige pagina al de home pagina is
-        if (window.location.pathname === "/index.html" || window.location.pathname === "/") {
-            // Voorkom de standaard navigatie
-            event.preventDefault();
-            // Vervang de tekst van de Home link met "Already there"
-            var homeLink = document.getElementById("home-link");
-            homeLink.textContent = "Already there";
-            // Voeg een extra span toe om de tekst van "Already there" kleiner te maken
-            homeLink.innerHTML = '<span class="already-there">Already there</span>';
-            // Zet de tekst weer terug naar "Home" na 2 seconden
-            setTimeout(function() {
-                homeLink.innerHTML = 'Home';
-            }, 2000);
+    document.addEventListener("DOMContentLoaded", function () {
+        const meteoriteImage = 'https://opengameart.org/sites/default/files/Asteroid%20Brown.png';
+        const explosionImage = 'https://toppng.com/uploads/preview/explosion-pixel-art-115633555132uir2zl9fd.png';
+
+        const meteoriteContainer = document.createElement('div');
+        meteoriteContainer.style.position = 'absolute';
+        meteoriteContainer.style.top = '0';
+        meteoriteContainer.style.left = '0';
+        meteoriteContainer.style.width = '100%';
+        meteoriteContainer.style.height = '100%';
+        meteoriteContainer.style.zIndex = '2'; // Set z-index to make sure meteorites are above background but below content
+        meteoriteContainer.style.pointerEvents = 'none'; // Ensure meteorite container does not block scrolling or other interactions
+        document.body.appendChild(meteoriteContainer);
+
+        // Function to create random meteorites
+        function createMeteorite() {
+            const meteorite = document.createElement('img');
+            meteorite.src = meteoriteImage;
+            meteorite.style.position = 'absolute';
+            meteorite.style.width = '50px';
+            meteorite.style.height = '50px';
+            meteorite.style.transition = 'transform 0.1s linear';
+            meteorite.style.zIndex = '999'; // Ensure meteorites are still on top of the background
+            meteorite.style.pointerEvents = 'auto'; // Enable pointer events for meteorites (clickable)
+
+            // Randomly place meteorite
+            const randomX = Math.random() * window.innerWidth;
+            const randomY = Math.random() * window.innerHeight;
+            meteorite.style.left = `${randomX}px`;
+            meteorite.style.top = `${randomY}px`;
+
+            // Random rotation speed
+            const randomRotationSpeed = Math.random() * 0.5 + 0.1; // Slow rotation speed
+            meteorite.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+            // Add meteorite to the container
+            meteoriteContainer.appendChild(meteorite);
+
+            // Random movement direction
+            const randomAngle = Math.random() * 360; // Random direction
+            const randomSpeed = Math.random() * 0.5 + 0.1; // Slower random speed for movement (0.1 to 0.6)
+
+            // Calculate velocity in X and Y direction based on angle
+            const velocityX = Math.cos(randomAngle * Math.PI / 180) * randomSpeed;
+            const velocityY = Math.sin(randomAngle * Math.PI / 180) * randomSpeed;
+
+            // Function to move meteorites in the calculated direction
+            const moveMeteorite = () => {
+                let currentX = parseFloat(meteorite.style.left);
+                let currentY = parseFloat(meteorite.style.top);
+
+                // Update position based on velocity
+                currentX += velocityX;
+                currentY += velocityY;
+
+                // If meteorite goes off screen, wrap it around
+                if (currentX > window.innerWidth) currentX = 0;
+                if (currentX < 0) currentX = window.innerWidth;
+                if (currentY > window.innerHeight) currentY = 0;
+                if (currentY < 0) currentY = window.innerHeight;
+
+                meteorite.style.left = `${currentX}px`;
+                meteorite.style.top = `${currentY}px`;
+
+                // Random rotation effect for meteorite
+                meteorite.style.transform = `rotate(${parseFloat(meteorite.style.transform.replace('rotate(', '').replace('deg)', '')) + randomRotationSpeed}deg)`;
+
+                requestAnimationFrame(moveMeteorite); // Keep moving meteorite
+            };
+
+            // Start moving the meteorite in its random direction
+            moveMeteorite();
+
+            // Explosion effect when clicked
+            meteorite.addEventListener('click', function () {
+                meteorite.style.visibility = 'hidden'; // Immediately hide the meteorite
+
+                // Create explosion image
+                const explosion = document.createElement('img');
+                explosion.src = explosionImage;
+                explosion.style.position = 'absolute';
+                explosion.style.width = '100px';
+                explosion.style.height = '100px';
+                explosion.style.left = meteorite.style.left;
+                explosion.style.top = meteorite.style.top;
+                explosion.style.zIndex = '1000'; // Explosion should appear above the text and meteorites
+                explosion.style.display = 'block'; // Ensure explosion is visible
+                meteoriteContainer.appendChild(explosion);
+
+                // Remove explosion after 0.5 seconds
+                setTimeout(function () {
+                    explosion.remove(); // Remove explosion image
+                }, 500);
+            });
+        }
+
+        // Create 20 meteorites on page load all at once
+        for (let i = 0; i < 20; i++) {
+            createMeteorite();
         }
     });
+
 </script>
 
 </body>
