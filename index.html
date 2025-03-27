@@ -52,8 +52,8 @@
         }
 
         nav a:hover {
-            background-color: #ddd;
-            color: black;
+            background-color: rgba(0, 0, 0, 0.5); /* Doorzichtig zwart met 50% transparantie */
+            color: white; /* Zorg ervoor dat de tekstkleur nog steeds wit is */
         }
         /* Center Circle Content */
         .center-circle {
@@ -179,8 +179,8 @@
 <!-- Navbar -->
 <nav>
     <a href="index.html" id="home-link">Home</a>
-    <a href="aboutMe.html">About Me</a>
-    <a href="projects.html">Projects</a>
+    <a href="aboutMe.html">Over mij</a>
+    <a href="projects.html">Projecten</a>
 </nav>
 
 <!-- Portfolio Text -->
@@ -191,10 +191,10 @@
 <!-- Center Circle Content -->
 <div class="center-circle">
     <div class="scrollable-content">
-        <h1>Hallo! Ik ben Sem van Veen.</h1>
+        <h1>Hallo!</h1>
         <p>Ik studeer Creative Media and Game Technologies en ik heb het hier echt naar mijn zin. Ik ben op zoek naar een afstudeerstage waar ik mijn creatieve ideeën kan uitwerken, en waar design en innovatie belangrijk zijn.</p>
         <p>Ik hou ervan om nieuwe dingen te maken, dingen die soms een beetje anders zijn dan wat je normaal ziet. Het is voor mij een uitdaging om mijn ideeën om te zetten in iets dat mensen echt kunnen gebruiken en beleven.</p>
-        <p>De afgelopen tijd heb ik aan verschillende projecten gewerkt, zoals het maken van een game waaraan ik recent heb bijgedragen. In de sectie *"Projecten"* kun je meer zien over wat ik heb gemaakt. Als je meer over mij wilt weten, kun je alles lezen in de *"About Me"* sectie.</p>
+        <p>De afgelopen tijd heb ik aan verschillende projecten gewerkt, zoals het maken van een game! In de sectie *"Projecten"* kun je meer zien over wat ik heb gemaakt. Als je meer over mij wilt weten, kun je alles lezen in de *"About Me"* sectie.</p>
         <p>Ik heb deze website gecreëerd als een portfolio om te laten zien waar mijn interesses liggen en waar ik voor sta. Het is voor mij belangrijk om te laten zien dat ik van design hou en dat ik elke kans die ik krijg, volledig benut.</p>
         <p>Ik hoop met mijn werk te inspireren en mijn passie te delen met anderen. Mijn doel is om mijn manier van werken te laten zien, en hopelijk kan ik hiermee een plek vinden bij een bedrijf waar ik verder kan groeien.</p>
         <p>Bedankt voor het bekijken van mijn portfolio! Ik hoop dat je iets interessants vindt en dat we misschien ooit kunnen samenwerken. Als je meer wilt weten of contact met mij wilt opnemen, aarzel dan niet om dat te doen. Ik kijk ernaar uit om te horen van je!</p>
@@ -205,7 +205,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const meteoriteImage = 'https://opengameart.org/sites/default/files/Asteroid%20Brown.png';
-        const explosionImage = 'https://toppng.com/uploads/preview/explosion-pixel-art-115633555132uir2zl9fd.png';
+        const explosionImage = 'assets/gif/vciazx9woomb1.gif'; // Updated explosion image path
 
         const meteoriteContainer = document.createElement('div');
         meteoriteContainer.style.position = 'absolute';
@@ -300,12 +300,12 @@
         }
 
         // Create 20 meteorites on page load all at once
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 8; i++) {
             createMeteorite();
         }
     });
 
 </script>
-
+<p>click op de meteorieten!</p>
 </body>
 </html>

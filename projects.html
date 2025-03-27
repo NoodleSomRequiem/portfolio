@@ -47,9 +47,10 @@
         }
 
         nav a:hover {
-            background-color: #ddd;
-            color: black;
+            background-color: rgba(0, 0, 0, 0.5); /* Doorzichtig zwart met 50% transparantie */
+            color: white; /* Zorg ervoor dat de tekstkleur nog steeds wit is */
         }
+
 
         /* Button to Toggle Vertical Navbar */
         .toggle-btn {
@@ -66,7 +67,7 @@
 
         .toggle-btn:hover {
             background-color: transparent;
-            color: #ff4545;
+            color: rgba(0, 255, 255, 0.65);
         }
 
         /* Vertical Navbar Styling */
@@ -124,8 +125,9 @@
 
         /* This class shifts content to the left when the navbar is folded in */
         .content-container.nav-closed {
-            margin-left: 0px; /* Content moves to the left when navbar is folded in */
+            margin-left: 30px; /* Zorg ervoor dat de tekst niet helemaal tegen de rand zit */
         }
+
 
         /* Styling for the image that will expand on navbar toggle */
         /* Styling for the flipped image and positioning it */
@@ -172,6 +174,11 @@
         .video-button:hover {
             background-color: #009999;
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
     </style>
 </head>
 <body>
@@ -182,15 +189,15 @@
 <!-- Navbar (top) -->
 <nav>
     <a href="index.html">Home</a>
-    <a href="aboutMe.html">About Me</a>
-    <a href="projects.html">Projects</a>
+    <a href="aboutMe.html">Over mij</a>
+    <a href="projects.html">Projecten</a>
 </nav>
 
 <!-- Vertical Sidebar Navbar (only on projects page) -->
 <div class="vertical-nav" id="verticalNav">
-    <a href="#project1">Internship</a>
+    <a href="#project1">Stage jaar 3</a>
     <a href="#project2">Minor Game Development</a>
-    <a href="#project3">Programming Over the Years</a>
+    <a href="#project3">Programmeren over de jaren</a>
 </div>
 
 <!-- Message to display when image is clicked -->
@@ -208,12 +215,24 @@
 <!-- Main Content Area -->
 <div class="content-container" id="contentContainer">
     <div class="content">
-        <h1>Projects</h1>
-        <p>My worked on projects:</p>
+        <h1>Projecten</h1>
+        <p>In 2021 begon ik mijn studie en vanaf het begin was ik enthousiast over programmeren. Het was meteen duidelijk dat dit de richting was waarin ik verder wilde gaan. In de eerste paar jaren van mijn studie heb ik me verdiept in verschillende aspecten van de technologie, waarvan de meeste projecten te maken hadden met programmeren. Toch had ik ook veel variatie, waardoor mijn ervaring breder werd dan alleen coderen.</p>
+
+        <p>Ik heb gewerkt met verschillende technologieën zoals React, Unity en Blender, waarmee ik niet alleen games heb ontwikkeld, maar ook 3D-modellen en websites/interactieve applicaties heb gemaakt. Daarnaast heb ik mijn kennis uitgebreid met game design en zelfs sound design, wat mijn creativiteit verder bevorderde. Deze variatie in projecten heeft me geholpen om een epic ontwikkelaar te worden, met ervaring in verschillende secties van het vakgebied.</p>
+
+        <p>Het is voor mij altijd een singetje geweest om te leren en te experimenteren met nieuwe tools en technieken, en ik ben er trots op dat ik zoveel verschillende kanten van de game- en softwareontwikkeling heb mogen zien. Mijn reis in de technologie is pas net begonnen, en ik kijk ernaar uit om in de toekomst nog veel meer te creëren!</p>
 
         <div id="project1">
-            <h2>Internship</h2>
-            <p>Details about Internship</p>
+            <h2>Stage jaar 3</h2>
+            <p>Mijn stage in het derde jaar van mijn studie vond plaats bij Vectory 3, een bedrijf dat op maat gemaakte braces maakt aan de hand van 3D-scans. Ze scannen een hand of been, waarna ze een speciaal programma hebben ontwikkeld dat automatisch een brace maakt. Dit programma had echter enkele flaws, vooral als het ging om de juiste positionering van het lichaam tijdens het scannen. Het probleem was dat de hand of het been perfect stil moest staan binnen een bepaald spectrum, anders zou de brace mislukken en moest het proces opnieuw worden uitgevoerd.</p>
+
+            <p>Mijn taak tijdens deze stage was om een oplossing te ontwikkelen voor dit probleem. In Blender heb ik een detectiebox gemaakt die controleerde of de hand correct gepositioneerd was in de scanner. Dit deed ik door een grid te creëren met een zogenaamde "kokon" erin, die detecteerde of de randen van de hand of arm de kokon aanraakten. Wanneer de hand verkeerd gepositioneerd was, werd dit aangegeven en moest de arm worden aangepast voor een succesvolle scan. Dit was een heel interessante en leerzame ervaring, vooral in de manier waarop ik Blender gebruikte voor functionele softwareontwikkeling en hoe ik werkte met 3D-omgevingen.</p>
+
+            <p>Wat ik voornamelijk geleerd heb tijdens deze stage, was het toepassen van geometrie in een 3D-omgeving om een medisch gerelateerd probleem op te lossen. De principes van positionering, detectie van objecten en het werken met 3D-coördinaten waren heel erg leerzaam. Het gaf me ook inzicht in hoe belangrijk het is om technische oplossingen in de echte wereld toe te passen, zoals in de medische technologie, en hoe kleine fouten in positionering grote gevolgen kunnen hebben voor de resultaten van zo een brace.</p>
+
+            <p>Hoewel de stage zelf leerzaam was, vond ik de werkomgeving niet bepaald motiverend. Mijn stagebegeleider was weinig betrokken bij mijn persoonlijke ontwikkeling en bood weinig begeleiding tijdens mijn project. Het bedrijf zelf bestond voornamelijk uit twee betaalde medewerkers – de eigenaar en een programmeur – terwijl de rest van het team bestond uit freelance stagiaires. Dit maakte het voor mij moeilijk om veel van mijn collega's te leren, en ik merkte dat sommige stagiaires veel meer aandacht kregen dan anderen. De persoonlijke ontwikkeling en begeleiding waren daardoor niet zoals ik had gehoopt.</p>
+
+            <p>Desondanks was het een waardevolle ervaring die me veel heeft geleerd over het werken met 3D-modellen, het ontwikkelen van detectiesystemen en het implementeren van algoritmes in een technische omgeving. Hoewel het niet de meest inspirerende stage was, was het een belangrijke stap in mijn groei als creatieve ontwikkelaar.</p>
 
             <!-- Video under Project 1 -->
             <div class="video-container">
@@ -223,11 +242,138 @@
 
         <div id="project2">
             <h2>Minor Game Development</h2>
-            <p>Details about Minor Game Development</p>
+            <p>De minor was voor mij echt een fantastische ervaring. Ik had het zo naar mijn zin en heb ontzettend veel nieuwe dingen geleerd. Gedurende de minor werkte ik aan twee verschillende games, wat een geweldige kans was om mijn vaardigheden te ontwikkelen en uit te breiden. De eerste game waaraan ik werkte, was een 2D mobile game genaamd <i>Lanselot's Adventure</i>, en de tweede was een 3D PC game genaamd <i>Re:spaced</i>.</p>
+
+            <p>De 2D game was echt een super leuke ervaring. In een team van zes mensen was ik de artist die voornamelijk werkte aan de pixel achtergronden en het level design. Ik was verantwoordelijk voor world building, waarbij ik verschillende omgevingen en levels creëerde die de speler door het spel zou leiden. Ook heb ik een beetje gewerkt aan sound design, wat ik erg leuk vond. Dit alles werkte ik samen met een team, en het samenwerken met anderen in een dynamisch teamverband was een leerzame ervaring. Dit heeft een geweldige fundering gelegd voor het volgende onderdeel van de minor, waarin ik besloot me volledig te focussen op sound design voor de game <i>Re:spaced</i>.</p>
+           <p>Studio logo en een background asset als voorbeeld (tower)</p>
+            <div class="image-container">
+                <img src="assets/picture/pixil-frame-0%20(64).png" alt="Image 1" class="project-image">
+                <img src="assets/picture/pixil-frame-0%20(79).png" alt="Image 2" class="project-image">
+            </div>
+
+            <p>Het sound design voor de eerste game was zo leuk, dat ik ervoor koos om me in de tweede game volledig te richten op geluid. Ik wilde alles zelf maken, wat in het begin best moeilijk was, aangezien ik nog nooit muziek had gemaakt. Ik begon met het verwerken van samples in Audacity en werkte langzaam maar zeker op naar het gebruik van FL Studio voor het produceren van muziek. Hier is een voorbeeld van mijn eerste tune:</p>
+
+            <P>Eerste tune ooit gemaakt (met trots)</P>
+            <audio controls>
+                <source src="assets/audio/D%26B%201%20%28first%20ever%29.wav" type="audio/wav">
+            </audio>
+
+
+            <p>Na wat onderzoek had ik besloten om het drum & bass genre te kiezen voor de muziek, omdat we een first-person shooter aan het maken waren. Bij het doen van onderzoek ontdekte ik dat bekende games zoals <i>Doom</i> en <i>Ultrakill</i> dezelfde muziekstijl hadden, wat me motiveerde om dit genre voor onze game aan te houden.</p>
+
+            <p>Mijn ontwikkeling ging snel, en ik leerde veel in een korte tijd. Ik produceerde al snel mijn tweede en derde tune:</p>
+
+            <P>2e tune ooit gemaakt, betere mixing maar nog niet helemaal daar</P>
+            <audio controls>
+                <source src="assets/audio/D%26B%202%20%28arcadey%29.wav" type="audio/wav">
+            </audio>
+
+            <p>3e tune begint er op te lijken! </p>
+            <audio controls>
+                <source src="assets/audio/D%26B%203%20%28goofy%2C%20experimental%2C%20favorite%29.wav" type="audio/wav">
+            </audio>
+
+
+            <p>Gedurende deze tijd merkte ik dat er hier en daar wat mixingproblemen waren, die ik vervolgens oploste. Ik werkte echt enorm veel aan de muziek. Na school ging ik direct thuis verder, omdat ik het zo leuk vond. Ik ontdekte al snel dat ik er een goed gevoel voor had, en dat motiveerde me om te blijven experimenteren met verschillende muziekgenres. Hier is nog een voorbeeld van een paar andere tunes die ik in een ander genre maakte:</p>
+
+            <p>Een disco tune, een party favorite die ook in de game zit!</p>
+            <audio controls>
+                <source src="assets/audio/disco%202.wav" type="audio/wav">
+            </audio>
+
+
+            <p>Super experimentele horror tune</p>
+            <audio controls>
+                <source src="assets/audio/environmental%20tune.wav" type="audio/wav">
+            </audio>
+
+
+            <p>Phonk tune, geen idee waarom ik dit wilde maken</p>
+            <audio controls>
+                <source src="assets/audio/phonk%20tune.wav" type="audio/wav">
+            </audio>
+            <p>Piano tune (was oprecht vergeten dat ik dit had gemaakt maar vond hem zeker 'worth the mention')</p>
+            <audio controls>
+                <source src="assets/audio/piano%20tune.wav" type="audio/wav">
+            </audio>
+            <p>Weer een random experiment</p>
+            <audio controls>
+                <source src="assets/audio/throwaway%20experiment.wav" type="audio/wav">
+            </audio>
+
+
+            <p>Door alles samen te voegen, veel feedback van andere teamleden te verwerken en overleg te voeren met designers, kwam ik uit op de ultieme mixtape voor de game! Ik maakte een 8 minuten durende tune met verschillende sounds, inclusief een 'boss' tune:</p>
+            <p>De volledige, loopable, sound track voor de main gameplay!</p>
+            <p>Hier merk je echt zowat direct al mijn voortgang in mixing (<a href="#" id="jumpToTime">04:50 best part!</a>).</p>
+
+            <audio controls id="audioPlayer">
+                <source src="assets/audio/final%20tune.wav" type="audio/wav">
+            </audio>
+
+            <script>
+                // Zoek de link en de audio speler op
+                const jumpLink = document.getElementById('jumpToTime');
+                const audioPlayer = document.getElementById('audioPlayer');
+
+                // Zet de tijd naar 04:50 (290 seconden) wanneer de link wordt aangeklikt
+                jumpLink.addEventListener('click', function(e) {
+                    e.preventDefault();  // Voorkom de standaard actie van de link
+                    audioPlayer.currentTime = 290;  // 04:50 is 290 seconden
+                    audioPlayer.play();  // Speel de audio vanaf die tijd
+                });
+            </script>
+
+            <p>De crazy boss fight tune! (<a href="javascript:void(0);" onclick="skipToBestPart()">best part 01:35!</a>)</p>
+            <audio id="bossFightAudio" controls>
+                <source src="assets/audio/boss%20fight%20tune.wav" type="audio/wav">
+            </audio>
+
+            <script>
+                const bossFightAudio = document.getElementById('bossFightAudio');
+
+                function skipToBestPart() {
+                    bossFightAudio.currentTime = 95; // 01:35 is 95 seconden
+                    bossFightAudio.play();
+                }
+            </script>
+
+            <script>
+                document.querySelectorAll('audio').forEach(function(audioElement) {
+                    audioElement.volume = 0.2; // Zet het volume op 50% (halverwege)
+                });
+            </script>
+
+            <p>Verder houd ik erg van easter eggs, en heb ik 4 'hidden documents' over de map verspreid om onze spelers alert te houden.</p>
+            <div class="image-container">
+                <img src="assets/picture/secret%20doc%201.png" alt="Image 4" class="small-project-image">
+                <img src="assets/picture/secret%20doc%202.png" alt="Image 5" class="small-project-image">
+                <img src="assets/picture/secret%20doc%203.png" alt="Image 6" class="small-project-image">
+                <img src="assets/picture/secret%20doc%204.png" alt="Image 7" class="small-project-image">
+            </div>
+
+            <style>
+                .image-container {
+                    display: flex;
+                    justify-content: center;
+                    gap: 20px;
+                }
+
+                .small-project-image {
+                    width: 215px;  /* Verklaar de breedte van de afbeelding kleiner (bijvoorbeeld 100px) */
+                    height: auto;  /* Houd de verhouding van de afbeelding */
+                    border-radius: 8px; /* Optioneel voor een afgeronde rand */
+                }
+            </style>
+
+            <p>Wat ik vooral heb geleerd in deze minor is dat teamwork essentieel is. Je werkt samen met anderen, en niet iedereen is het altijd met elkaar eens. Zo had onze art lead vrijwel niks wat we deden goed gevonden en liet ons veel dingen opnieuw doen, zonder dat er echt een duidelijke reden voor was, alleen omdat zij het “niet leuk” vond. Dit zijn keuzes die je maakt als team, en uiteindelijk besef je waar ieders kwaliteiten liggen. Haar kwaliteiten lagen duidelijk niet in teamleiding, en uiteindelijk nam iemand anders die rol over. Dit was een belangrijke les in leiderschap en teamdynamiek.</p>
+
+            <p>Wat ik wel merkte, is dat ik mijn rol als artist heel prettig vond, en dat ik daar goed in was. Samen met onze programmeur, meneer Mikko, hebben we alles in Unity gezet. De sound speelde een cruciale rol in de game en gaf het spel de sfeer die we nodig hadden.</p>
+
+            <p>Bekijk zelf <a href="https://store.steampowered.com/app/3380820/ReSpaced/" target="_blank">Re:spaced</a>, een rogue-like space FPS die zich focust op mobiliteit. Het wapen in het spel heeft zoveel recoil dat je door de map kunt vliegen, en na elk level krijg je upgrades waaruit je kunt kiezen om je karakter te verbeteren. Het doel is om door alle levels heen te vliegen zonder dood te gaan en uiteindelijk de eindbaas te verslaan.</p>
         </div>
 
         <div id="project3">
-            <h2>Programming Over the Years</h2>
+            <h2>Programmeren over de jaren</h2>
             <p>Details about Programming Over the Years</p>
 
             <!-- Video Selection for Project 3 -->
@@ -253,48 +399,49 @@
     // Set initial message text
     let clickCount = 0;
 
+    // Het menu openen en sluiten bij klikken op de toggle knop
     toggleBtn.addEventListener('click', function() {
-        // Toggle the vertical nav visibility
+        // Toggle de zichtbaarheid van de verticale navigatie
         verticalNav.classList.toggle('hidden');
 
-        // Toggle the content container position
+        // Toggle de positie van de content container
         contentContainer.classList.toggle('nav-open');
         contentContainer.classList.toggle('nav-closed');
 
-        // Reset the text and click count when nav bar is opened (first click to close)
+        // Reset de tekst en klik teller wanneer het menu open is (eerste klik om te sluiten)
         if (!verticalNav.classList.contains('hidden')) {
-            imageMessage.textContent = '';  // Clear the message
-            clickCount = 0;  // Reset the click count
+            imageMessage.textContent = '';  // Wis het bericht
+            clickCount = 0;  // Reset de klik teller
         }
     });
 
-    // Handle the image click message changes
+    // Verander het bericht bij het klikken op de afbeelding
     expandableImage.addEventListener('click', function() {
         clickCount++;
 
-        // Check if it's the 25th click
+        // Check of het de 25ste klik is
         if (clickCount === 25) {
             imageMessage.textContent = "STOOOOOP!!!";
         } else if (clickCount < 25) {
-            // Change the message text based on the click count
+            // Verander het bericht afhankelijk van het aantal klikken
             if (clickCount === 1) {
                 imageMessage.textContent = "Hi!";
             } else if (clickCount === 2) {
-                imageMessage.textContent = "I hope you like the website!";
+                imageMessage.textContent = "Ik hoop dat je de website leuk vindt!";
             } else if (clickCount === 3) {
-                imageMessage.textContent = "You can stop clicking now!";
+                imageMessage.textContent = "Je kunt nu stoppen met klikken!";
             } else if (clickCount === 4) {
                 imageMessage.textContent = "HMPF...";
             } else {
-                imageMessage.textContent = "HMPF..."; // Repeat after the fourth click
+                imageMessage.textContent = "HMPF..."; // Herhaal na de vierde klik
             }
         } else {
-            // After the 25th click, keep saying "STOOOOOP!!!"
+            // Na de 25ste klik, blijf "STOOOOOP!!!" tonen
             imageMessage.textContent = "STOOOOOP!!!";
         }
     });
 
-    // Handle video button clicks for Project 3
+    // Video knoppen voor Project 3
     const video1Btn = document.getElementById('video1Btn');
     const video2Btn = document.getElementById('video2Btn');
     const project3Video = document.getElementById('project3Video');
@@ -306,6 +453,26 @@
     video2Btn.addEventListener('click', function() {
         project3Video.src = "https://www.youtube.com/embed/ssw8gvhQ8T4";
     });
+
+    // Toevoegen van smooth scroll met offset voor de verticale navigatie links
+    const navLinks = document.querySelectorAll('.vertical-nav a');
+    const navbarHeight = document.querySelector('nav').offsetHeight; // Verkrijg de hoogte van de navbar
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault(); // Voorkom de standaard klikactie
+
+            const targetId = this.getAttribute('href').substring(1); // Verkrijg de target sectie id
+            const targetElement = document.getElementById(targetId); // Vind het doel element
+
+            // Scroll naar het doel element, met aanpassing voor de hoogte van de navbar
+            window.scrollTo({
+                top: targetElement.offsetTop - navbarHeight, // Pas de scroll positie aan met de navbar hoogte
+                behavior: 'smooth' // Smooth scrolling effect
+            });
+        });
+    });
+
 </script>
 
 </body>

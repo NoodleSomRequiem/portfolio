@@ -48,39 +48,89 @@
         }
 
         nav a:hover {
-            background-color: #ddd;
-            color: black;
+            background-color: rgba(0, 0, 0, 0.5); /* Doorzichtig zwart met 50% transparantie */
+            color: white; /* Zorg ervoor dat de tekstkleur nog steeds wit is */
         }
 
-        /* Star Wars Style Text Effect */
+        /* About Me Section */
         .about-me-container {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             text-align: center;
-            max-width: 600px;
+            max-width: 600px; /* Breder formaat */
             margin: auto;
-            width: 100%; /* Ensure the text container takes full width */
+            width: 100%;
         }
 
         .about-me-text {
             font-family: 'Orbitron', sans-serif;
-            color: #fff; /* Change text color to white */
-            background-color: rgba(255, 0, 0, 0.2); /* Transparent red background */
-            line-height: 1.6;
+            color: #fff;
+            background-color: rgba(255, 0, 0, 0.2);
+            line-height: 1.4; /* Kortere tekstweergave */
             text-align: center;
-            text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.75), 0px 0px 30px rgba(255, 255, 255, 0.75);
-            padding: 20px; /* Padding to make text more readable */
-            border-radius: 15px; /* Rounded edges for the box */
-            box-shadow: 0px 0px 30px rgba(255, 0, 0, 0.4), 0px 0px 100px rgba(255, 0, 0, 0.2); /* More transparent and spread out edges */
-            font-size: 18px; /* Set all text to the same size */
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.75);
+            padding: 15px; /* Minder padding */
+            border-radius: 15px;
+            box-shadow: 0px 0px 30px rgba(255, 0, 0, 0.4);
+            font-size: 16px; /* Kleinere tekst */
+            max-width: 500px;
         }
 
-        /* Add Audio File at the end */
-        audio {
-            margin-top: 20px; /* Space between text and audio player */
+        .photo-container {
+            position: absolute;
+            left: 10%; /* Plaats de foto helemaal links */
+            top: 30%; /* Verplaats de foto nog iets hoger op de Y-as */
+            transform: translateY(-50%); /* Verticaal centreren */
+            padding: 10px;
+            border: 10px solid rgba(255, 0, 0, 0.5); /* Rode rand voor fotolijst effect */
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.7);
+            animation: float 5s ease-in-out infinite, rotate 10s infinite linear; /* Voeg zweven en rotatie animatie toe */
         }
+
+
+        .photo-container img {
+            width: 200px; /* Stel de grootte van de foto in */
+            height: auto;
+            border-radius: 5px;
+        }
+
+        /* Animaties */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(-50%) translateX(0);
+            }
+            50% {
+                transform: translateY(-45%) translateX(10px); /* Float effect, beweegt naar rechts */
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg); /* Start zonder rotatie */
+            }
+            25% {
+                transform: rotate(15deg); /* Beweeg naar rechts */
+            }
+            50% {
+                transform: rotate(0deg); /* Terug naar het midden */
+            }
+            75% {
+                transform: rotate(-15deg); /* Beweeg naar links */
+            }
+            100% {
+                transform: rotate(0deg); /* Terug naar het midden */
+            }
+        }
+
+        /* Klik effect */
+        .clicked {
+            animation: none; /* Stop de animatie */
+            transform: rotate(0deg); /* Zet de rotatie terug naar 0 */
+        }
+
     </style>
 </head>
 <body>
@@ -95,32 +145,31 @@
 <!-- About Me Section -->
 <div class="about-me-container">
     <div class="about-me-text">
-        <p>Hi, I'm Sem van Veen! I'm looking for an internship where design is the main focus.</p>
-        <p>I've worked on game projects, primarily doing sound design, which you can read about on the Projects page. But I also did some design work, and I absolutely loved it.</p>
-        <p>I have a basic understanding of coding and a huge passion for gaming.</p>
-        <p>Creating is what I love—whether it's design, visual art, or audio, I'm all in! I'd also love to learn more about coding.</p>
-        <p>A little bit more about me: I love playing games and going to the gym. I'm also really into music, and I've even made some myself!</p>
-
-        <!-- Add Audio File at the end -->
-        <audio controls>
-            <source src="assets/audio/menu%20music%20140%20bpm.wav" type="audio/wav">
-        </audio>
-
+        <div class="scrollable-content">
+            <h1>Hallo! Ik ben Sem van Veen.</h1>
+            <p>Ik studeer Creative Media and Game Technologies en ik ben gek op games, design en technologie. Gamen is voor mij meer dan alleen een hobby. Ik hou ervan om mezelf uit te dagen, vooral met games die een sterk verhaal en mooie werelden hebben. *Bloodborne* is daar een goed voorbeeld van. De sfeer en het design in zulke games inspireren mij enorm, en het lijkt me supertof om ooit aan zoiets mee te werken.</p>
+            <p>Naast gamen ben ik veel bezig met fitness. Het is voor mij belangrijk om zowel fysiek als mentaal gezond te blijven. Sport helpt me niet alleen sterker te worden, maar ook scherp en in balans te blijven.</p>
+            <p>Ik zoek een afstudeerstage waar ik mijn creativiteit kan inzetten en nieuwe dingen kan leren. Ik wil werken aan toffe projecten waarin design en innovatie belangrijk zijn.</p>
+            <p>Bekijk gerust mijn projecten om te zien wat ik heb gemaakt. En als je denkt dat we goed bij elkaar passen, neem dan gerust contact op!</p>
+        </div>
     </div>
 </div>
 
+<!-- Foto van Sem -->
+<div class="photo-container" onmousedown="stopRotation(this)" onmouseup="startRotation(this)" onmouseleave="startRotation(this)">
+    <img src="assets/picture/IMG-20250325-WA0034.jpg" alt="Sem's Foto">
+</div>
+
 <script>
-    // JavaScript om te controleren of we al op de About Me pagina zijn
-    document.getElementById("home-link").addEventListener("click", function(event) {
-        if (window.location.pathname.includes("index.html") || window.location.pathname === "/") {
-            event.preventDefault();
-            var homeLink = document.getElementById("home-link");
-            homeLink.innerHTML = '<span class="already-there">Already there</span>';
-            setTimeout(function() {
-                homeLink.innerHTML = 'Home';
-            }, 2000);
-        }
-    });
+    // JavaScript om de animatie te stoppen als je de foto ingedrukt houdt
+    function stopRotation(element) {
+        element.classList.add('clicked'); // Stop de animatie
+    }
+
+    // Herstart de animatie zodra je de muisknop loslaat
+    function startRotation(element) {
+        element.classList.remove('clicked'); // Start de animatie opnieuw
+    }
 </script>
 
 </body>
