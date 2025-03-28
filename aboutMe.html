@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <title>About Me</title>
     <style>
-        /* Bestaande CSS */
+
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&display=swap');
 
-        /* Simple Navbar Styling */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -21,7 +20,6 @@
             overflow: hidden;
         }
 
-        /* Navbar Styling */
         nav {
             background: radial-gradient(circle, rgba(255, 69, 69, 0.85) 0%, rgba(255, 69, 69, 0.65) 20%, rgba(255, 69, 69, 0.45) 40%, rgba(255, 69, 69, 0.25) 60%, rgba(255, 69, 69, 0.15) 80%, rgba(255, 69, 69, 0.05) 90%, rgba(255, 69, 69, 0.001) 100%);
             overflow: hidden;
@@ -29,7 +27,7 @@
             position: fixed;
             top: 0;
             width: 60%;
-            left: 21%; /* Slightly adjusted position */
+            left: 21%;
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -48,18 +46,17 @@
         }
 
         nav a:hover {
-            background-color: rgba(0, 0, 0, 0.5); /* Doorzichtig zwart met 50% transparantie */
-            color: white; /* Zorg ervoor dat de tekstkleur nog steeds wit is */
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
         }
 
-        /* About Me Section */
         .about-me-container {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             text-align: center;
-            max-width: 600px; /* Breder formaat */
+            max-width: 600px;
             margin: auto;
             width: 100%;
         }
@@ -68,108 +65,173 @@
             font-family: 'Orbitron', sans-serif;
             color: #fff;
             background-color: rgba(255, 0, 0, 0.2);
-            line-height: 1.4; /* Kortere tekstweergave */
+            line-height: 1.4;
             text-align: center;
             text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.75);
             padding: 15px; /* Minder padding */
             border-radius: 15px;
             box-shadow: 0px 0px 30px rgba(255, 0, 0, 0.4);
-            font-size: 16px; /* Kleinere tekst */
+            font-size: 16px;
             max-width: 500px;
         }
 
         .photo-container {
             position: absolute;
-            left: 10%; /* Plaats de foto helemaal links */
-            top: 30%; /* Verplaats de foto nog iets hoger op de Y-as */
-            transform: translateY(-50%); /* Verticaal centreren */
+            left: 10%;
+            top: 30%;
+            transform: translateY(-50%);
             padding: 10px;
-            border: 10px solid rgba(255, 0, 0, 0.5); /* Rode rand voor fotolijst effect */
+            border: 10px solid rgba(255, 0, 0, 0.5);
             border-radius: 10px;
             box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.7);
-            animation: float 5s ease-in-out infinite, rotate 10s infinite linear; /* Voeg zweven en rotatie animatie toe */
+            animation: float 5s ease-in-out infinite, rotate 10s infinite linear;
         }
 
-
         .photo-container img {
-            width: 200px; /* Stel de grootte van de foto in */
+            width: 200px;
             height: auto;
             border-radius: 5px;
         }
 
-        /* Animaties */
+
         @keyframes float {
             0%, 100% {
                 transform: translateY(-50%) translateX(0);
             }
             50% {
-                transform: translateY(-45%) translateX(10px); /* Float effect, beweegt naar rechts */
+                transform: translateY(-45%) translateX(10px);
             }
         }
 
         @keyframes rotate {
             0% {
-                transform: rotate(0deg); /* Start zonder rotatie */
+                transform: rotate(0deg);
             }
             25% {
-                transform: rotate(15deg); /* Beweeg naar rechts */
+                transform: rotate(15deg);
             }
             50% {
-                transform: rotate(0deg); /* Terug naar het midden */
+                transform: rotate(0deg);
             }
             75% {
-                transform: rotate(-15deg); /* Beweeg naar links */
+                transform: rotate(-15deg);
             }
             100% {
-                transform: rotate(0deg); /* Terug naar het midden */
+                transform: rotate(0deg);
             }
         }
 
-        /* Klik effect */
         .clicked {
             animation: none; /* Stop de animatie */
             transform: rotate(0deg); /* Zet de rotatie terug naar 0 */
+        }
+
+        .language-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #d90606;
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
         }
 
     </style>
 </head>
 <body>
 
-<!-- Navbar -->
+<button class="language-toggle" id="languageToggle">English</button>
+
 <nav>
     <a href="index.html" id="home-link">Home</a>
-    <a href="aboutMe.html">About Me</a>
-    <a href="projects.html">Projects</a>
+    <a href="aboutMe.html" id="about-link">Over mij</a>
+    <a href="projects.html" id="projects-link">Projecten</a>
 </nav>
 
-<!-- About Me Section -->
 <div class="about-me-container">
-    <div class="about-me-text">
+    <div class="about-me-text" id="aboutText">
         <div class="scrollable-content">
-            <h1>Hallo! Ik ben Sem van Veen.</h1>
-            <p>Ik studeer Creative Media and Game Technologies en ik ben gek op games, design en technologie. Gamen is voor mij meer dan alleen een hobby. Ik hou ervan om mezelf uit te dagen, vooral met games die een sterk verhaal en mooie werelden hebben. *Bloodborne* is daar een goed voorbeeld van. De sfeer en het design in zulke games inspireren mij enorm, en het lijkt me supertof om ooit aan zoiets mee te werken.</p>
-            <p>Naast gamen ben ik veel bezig met fitness. Het is voor mij belangrijk om zowel fysiek als mentaal gezond te blijven. Sport helpt me niet alleen sterker te worden, maar ook scherp en in balans te blijven.</p>
-            <p>Ik zoek een afstudeerstage waar ik mijn creativiteit kan inzetten en nieuwe dingen kan leren. Ik wil werken aan toffe projecten waarin design en innovatie belangrijk zijn.</p>
-            <p>Bekijk gerust mijn projecten om te zien wat ik heb gemaakt. En als je denkt dat we goed bij elkaar passen, neem dan gerust contact op!</p>
+            <h1 id="aboutTitle">Mijn naam is Sem van Veen.</h1>
+            <p id="paragraph1">Ik studeer Creative Media and Game Technologies en ik ben gek op games, design en technologie. Gamen is voor mij meer dan alleen een hobby. Ik hou ervan om mezelf uit te dagen, vooral met games die een sterk verhaal en mooie werelden hebben. *Bloodborne* is daar een goed voorbeeld van. De sfeer en het design in zulke games inspireren mij enorm, en het lijkt me supertof om ooit aan zoiets mee te werken.</p>
+            <p id="paragraph2">Naast gamen ben ik veel bezig met fitness. Het is voor mij belangrijk om zowel fysiek als mentaal gezond te blijven. Sport helpt me niet alleen sterker te worden, maar ook scherp en in balans te blijven.</p>
+            <p id="paragraph3">Ik zoek een afstudeerstage waar ik mijn creativiteit kan inzetten en nieuwe dingen kan leren. Ik wil werken aan toffe projecten waarin design en innovatie belangrijk zijn.</p>
+            <p id="paragraph4">Bekijk gerust mijn projecten om te zien wat ik heb gemaakt. En als je denkt dat we goed bij elkaar passen, neem dan gerust contact op!</p>
         </div>
     </div>
 </div>
 
-<!-- Foto van Sem -->
 <div class="photo-container" onmousedown="stopRotation(this)" onmouseup="startRotation(this)" onmouseleave="startRotation(this)">
     <img src="assets/picture/IMG-20250325-WA0034.jpg" alt="Sem's Foto">
 </div>
 
 <script>
-    // JavaScript om de animatie te stoppen als je de foto ingedrukt houdt
+    document.addEventListener("DOMContentLoaded", function () {
+        var storedLanguage = localStorage.getItem("language");
+        if (storedLanguage === "en") {
+            toggleLanguage();
+        } else if (storedLanguage === "nl") {
+            toggleLanguage();
+        } else {
+            localStorage.setItem("language", "nl");
+        }
+    });
+
     function stopRotation(element) {
-        element.classList.add('clicked'); // Stop de animatie
+        element.classList.add('clicked');
+    }
+    function startRotation(element) {
+        element.classList.remove('clicked');
     }
 
-    // Herstart de animatie zodra je de muisknop loslaat
-    function startRotation(element) {
-        element.classList.remove('clicked'); // Start de animatie opnieuw
-    }
+    document.addEventListener("DOMContentLoaded", function() {
+        let currentLang = localStorage.getItem('language') || 'nl';
+        document.documentElement.lang = currentLang;
+        function updateLanguage(isDutch) {
+            if (isDutch) {
+                document.getElementById('languageToggle').textContent = 'English';
+                document.getElementById('home-link').textContent = 'Home';
+                document.getElementById('about-link').textContent = 'Over mij';
+                document.getElementById('projects-link').textContent = 'Projecten';
+
+                document.getElementById('aboutTitle').textContent = 'Mijn naam is Sem van Veen.';
+                document.getElementById('paragraph1').textContent = 'Ik studeer Creative Media and Game Technologies en ik ben gek op games, design en technologie. Gamen is voor mij meer dan alleen een hobby. Ik hou ervan om mezelf uit te dagen, vooral met games die een sterk verhaal en mooie werelden hebben. *Bloodborne* is daar een goed voorbeeld van. De sfeer en het design in zulke games inspireren mij enorm, en het lijkt me supertof om ooit aan zoiets mee te werken.';
+                document.getElementById('paragraph2').textContent = 'Naast gamen ben ik veel bezig met fitness. Het is voor mij belangrijk om zowel fysiek als mentaal gezond te blijven. Sport helpt me niet alleen sterker te worden, maar ook scherp en in balans te blijven.';
+                document.getElementById('paragraph3').textContent = 'Ik zoek een afstudeerstage waar ik mijn creativiteit kan inzetten en nieuwe dingen kan leren. Ik wil werken aan toffe projecten waarin design en innovatie belangrijk zijn.';
+                document.getElementById('paragraph4').textContent = 'Bekijk gerust mijn projecten om te zien wat ik heb gemaakt. En als je denkt dat we goed bij elkaar passen, neem dan gerust contact op!';
+            } else {
+                document.getElementById('languageToggle').textContent = 'Nederlands';
+
+                document.getElementById('home-link').textContent = 'Home';
+                document.getElementById('about-link').textContent = 'About Me';
+                document.getElementById('projects-link').textContent = 'Projects';
+
+                document.getElementById('aboutTitle').textContent = 'My name is Sem van Veen.';
+                document.getElementById('paragraph1').textContent = "I study Creative Media and Game Technologies, and I'm passionate about games, design, and technology. Gaming is more than just a hobby for me. I love challenging myself, especially with games that have a strong story and beautiful worlds. *Bloodborne* is a great example. The atmosphere and design in such games inspire me immensely, and I'd love to be involved in something like that someday.";
+                document.getElementById('paragraph2').textContent = "Besides gaming, I'm really into fitness. It's important for me to stay healthy both physically and mentally. Sports not only help me become stronger but also keep me sharp and balanced.";
+                document.getElementById('paragraph3').textContent = "I'm looking for an internship where I can use my creativity and learn new things. I want to work on cool projects that focus on design and innovation.";
+                document.getElementById('paragraph4').textContent = "Feel free to check out my projects to see what I've created. And if you think we could be a good match, don't hesitate to get in touch!";
+            }
+        }
+
+        updateLanguage(currentLang === 'nl');
+
+        document.getElementById('languageToggle').addEventListener('click', function() {
+            const isDutch = document.documentElement.lang === 'nl';
+            if (isDutch) {
+                document.documentElement.lang = 'en';
+                localStorage.setItem('language', 'en');
+            } else {
+                document.documentElement.lang = 'nl';
+                localStorage.setItem('language', 'nl');
+            }
+
+            updateLanguage(!isDutch);
+        });
+    });
+
 </script>
 
 </body>

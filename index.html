@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Node Project</title>
     <style>
-        /* Bestaande CSS */
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&display=swap'); /* Orbitron font importeren */
 
-        /* Simple Navbar Styling */
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&display=swap');
+
         body {
-            font-family: Arial, sans-serif; /* Gebruik Arial voor de body */
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-image: url('https://i.redd.it/steam-background-gif-dump-use-them-for-any-purpose-the-main-v0-2lkcq11e8i9b1.gif?width=600&auto=webp&s=4b92d51660b515f8d01572638ce10274be85fa27');
@@ -22,20 +21,19 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            overflow: hidden; /* Prevent scrolling of the whole page */
+            overflow: hidden;
         }
 
-        /* Navbar Styling */
         nav {
             background: radial-gradient(circle, rgba(144, 238, 144, 0.85) 0%, rgba(144, 238, 144, 0.65) 20%, rgba(144, 238, 144, 0.45) 40%, rgba(144, 238, 144, 0.25) 60%, rgba(144, 238, 144, 0.15) 80%, rgba(144, 238, 144, 0.05) 90%, rgba(144, 238, 144, 0.001) 100%);
             overflow: hidden;
             z-index: 1;
             position: fixed;
             top: 0;
-            width: 60%; /* Beperk de breedte van de navbar tot 60% van de pagina */
-            left: 21%; /* Iets naar links verplaatst */
+            width: 60%;
+            left: 21%;
             display: flex;
-            justify-content: space-around; /* Zorg ervoor dat de links evenredig worden verdeeld */
+            justify-content: space-around;
             align-items: center;
             padding-top: 5px;
             padding-bottom: 5px;
@@ -46,101 +44,99 @@
             padding: 14px 20px;
             text-decoration: none;
             text-align: center;
-            font-family: 'Orbitron', sans-serif; /* Orbitron font toegevoegd */
-            font-size: 28px; /* Grotere fontgrootte voor de knoppen */
-            min-width: 120px; /* Zorg ervoor dat de knoppen altijd dezelfde breedte hebben */
+            font-family: 'Orbitron', sans-serif;
+            font-size: 28px;
+            min-width: 120px;
         }
 
         nav a:hover {
-            background-color: rgba(0, 0, 0, 0.5); /* Doorzichtig zwart met 50% transparantie */
-            color: white; /* Zorg ervoor dat de tekstkleur nog steeds wit is */
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
         }
-        /* Center Circle Content */
+
         .center-circle {
-            width: 600px; /* Slightly bigger size for the circle */
-            height: 600px; /* Slightly bigger size for the circle */
+            width: 600px;
+            height: 600px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(144, 238, 144, 0.6) 0%, rgba(144, 238, 144, 0.4) 25%, rgba(144, 238, 144, 0.2) 50%, rgba(144, 238, 144, 0.1) 75%, rgba(144, 238, 144, 0.05) 100%); /* Multi-layer transparency */
+            background: radial-gradient(circle, rgba(144, 238, 144, 0.6) 0%, rgba(144, 238, 144, 0.4) 25%, rgba(144, 238, 144, 0.2) 50%, rgba(144, 238, 144, 0.1) 75%, rgba(144, 238, 144, 0.05) 100%);
             overflow: hidden;
             padding: 30px;
             position: relative;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Align content a little above center */
+            align-items: flex-start;
             max-width: 100%;
-            margin-top: 100px; /* Move the entire circle content further down the page */
+            margin-top: 100px;
         }
 
         .center-circle h1, .center-circle p {
             margin: 0;
-            text-align: center; /* Center text horizontally */
-            font-size: 24px; /* Larger text size */
+            text-align: center;
+            font-size: 24px;
             line-height: 1.8;
-            color: black; /* Black text */
-            max-width: 90%; /* Ensure text doesn't overflow */
-            padding-right: 20px; /* Add padding to the right side */
-            word-wrap: break-word; /* Prevent overflow */
-            padding-left: 50px; /* More left padding for better fit */
-            margin-bottom: 15px; /* Add space between paragraphs */
-            font-family: 'Orbitron', sans-serif; /* Gebruik Orbitron voor de tekst in de cirkel */
+            color: black;
+            max-width: 90%;
+            padding-right: 20px;
+            word-wrap: break-word;
+            padding-left: 50px;
+            margin-bottom: 15px;
+            font-family: 'Orbitron', sans-serif;
         }
 
-
-        /* Move the title down more */
         .center-circle h1 {
-            margin-top: 15px; /* Adjust this value to move the title further up */
+            margin-top: 15px;
         }
 
-        /* Scrollable content inside the circle */
         .scrollable-content {
-            max-height: 600px; /* Increased height to show more content before scrolling */
-            overflow-y: auto; /* Allow vertical scrolling of text */
+            max-height: 600px;
+            overflow-y: auto;
             padding-right: 20px;
             max-width: 100%;
         }
 
-
-        /* Remove the white part of the scroll bar and make the grey part smaller */
         .scrollable-content::-webkit-scrollbar {
-            width: 6px; /* Make the scrollbar smaller */
+            width: 6px;
             height: 1px;
         }
 
         .scrollable-content::-webkit-scrollbar-track {
-            background: transparent; /* Remove the white part of the scrollbar */
+            background: transparent;
         }
 
         .scrollable-content::-webkit-scrollbar-thumb {
-            background-color: rgba(144, 238, 144, 0.6); /* Light greenish thumb color */
-            border-radius: 10px; /* Rounded corners for the thumb */
+            background-color: rgba(144, 238, 144, 0.6);
+            border-radius: 10px;
         }
 
-        /* Portfolio Text Styling */
         .portfolio-text {
             position: absolute;
-            top: 7%; /* Adjust this value for vertical positioning */
-            left: 50%; /* Perfectly centered horizontally */
-            transform: translateX(-50%); /* Fine-tune centering */
-            font-family: 'Orbitron', sans-serif; /* Sci-fi font */
-            font-size: 120px; /* Large text */
+            top: 7%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 120px;
             font-weight: bold;
-            color: rgba(0, 0, 0, 0.8); /* Slightly transparent black */
-            z-index: 2; /* Ensure it stays on top of other elements */
+            color: rgba(0, 0, 0, 0.8);
+            z-index: 2;
         }
 
-        /* Meteorites Styling */
-        .meteorite {
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            background: url('https://opengameart.org/sites/default/files/Asteroid%20Brown.png') no-repeat center center;
-            background-size: cover;
-            border-radius: 50%;
-            animation: moveMeteorite 10s linear infinite, rotateMeteorite 8s linear infinite;
-            z-index: 10; /* Ensure meteorites are above background but below content */
+        #language-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
         }
 
-        /* Meteorite Movement */
+        #language-toggle:hover {
+            background-color: #45a049;
+        }
+
         @keyframes moveMeteorite {
             0% {
                 top: -50px;
@@ -152,7 +148,6 @@
             }
         }
 
-        /* Meteorite Rotation */
         @keyframes rotateMeteorite {
             0% {
                 transform: rotate(0deg);
@@ -162,7 +157,6 @@
             }
         }
 
-        /* Explosion Styling */
         .explosion {
             position: absolute;
             width: 100px;
@@ -170,42 +164,47 @@
             background: url('https://toppng.com/uploads/preview/explosion-pixel-art-115633555132uir2zl9fd.png') no-repeat center center;
             background-size: cover;
             display: none;
-            z-index: 20; /* Explosion should appear above meteorites and content */
+            z-index: 20;
         }
     </style>
 </head>
 <body>
 
-<!-- Navbar -->
+<button id="language-toggle" onclick="toggleLanguage()">English</button>
+
 <nav>
     <a href="index.html" id="home-link">Home</a>
     <a href="aboutMe.html">Over mij</a>
     <a href="projects.html">Projecten</a>
 </nav>
 
-<!-- Portfolio Text -->
 <div class="portfolio-text">
     Portfolio
 </div>
 
-<!-- Center Circle Content -->
+<div class="portfolio-text">
+    <div id="portfolioTitle">Portfolio</div>
+</div>
+
+
 <div class="center-circle">
     <div class="scrollable-content">
-        <h1>Hallo!</h1>
-        <p>Ik studeer Creative Media and Game Technologies en ik heb het hier echt naar mijn zin. Ik ben op zoek naar een afstudeerstage waar ik mijn creatieve ideeën kan uitwerken, en waar design en innovatie belangrijk zijn.</p>
-        <p>Ik hou ervan om nieuwe dingen te maken, dingen die soms een beetje anders zijn dan wat je normaal ziet. Het is voor mij een uitdaging om mijn ideeën om te zetten in iets dat mensen echt kunnen gebruiken en beleven.</p>
-        <p>De afgelopen tijd heb ik aan verschillende projecten gewerkt, zoals het maken van een game! In de sectie *"Projecten"* kun je meer zien over wat ik heb gemaakt. Als je meer over mij wilt weten, kun je alles lezen in de *"About Me"* sectie.</p>
-        <p>Ik heb deze website gecreëerd als een portfolio om te laten zien waar mijn interesses liggen en waar ik voor sta. Het is voor mij belangrijk om te laten zien dat ik van design hou en dat ik elke kans die ik krijg, volledig benut.</p>
-        <p>Ik hoop met mijn werk te inspireren en mijn passie te delen met anderen. Mijn doel is om mijn manier van werken te laten zien, en hopelijk kan ik hiermee een plek vinden bij een bedrijf waar ik verder kan groeien.</p>
-        <p>Bedankt voor het bekijken van mijn portfolio! Ik hoop dat je iets interessants vindt en dat we misschien ooit kunnen samenwerken. Als je meer wilt weten of contact met mij wilt opnemen, aarzel dan niet om dat te doen. Ik kijk ernaar uit om te horen van je!</p>
+        <h1 id="greeting">Hallo!</h1>
+        <p id="intro">Ik studeer Creative Media and Game Technologies en ik heb het hier echt naar mijn zin. Ik ben op zoek naar een afstudeerstage waar ik mijn creatieve ideeën kan uitwerken, en waar design en innovatie belangrijk zijn.</p>
+        <p id="hobby">Ik hou ervan om nieuwe dingen te maken, dingen die soms een beetje anders zijn dan wat je normaal ziet. Het is voor mij een uitdaging om mijn ideeën om te zetten in iets dat mensen echt kunnen gebruiken en beleven.</p>
+        <p id="projects">De afgelopen tijd heb ik aan verschillende projecten gewerkt, zoals het maken van een game! In de sectie *"Projecten"* kun je meer zien over wat ik heb gemaakt. Als je meer over mij wilt weten, kun je alles lezen in de *"About Me"* sectie.</p>
+        <p id="website">Ik heb deze website gecreëerd als een portfolio om te laten zien waar mijn interesses liggen en waar ik voor sta. Het is voor mij belangrijk om te laten zien dat ik van design hou en dat ik elke kans die ik krijg, volledig benut.</p>
+        <p id="goals">Ik hoop met mijn werk te inspireren en mijn passie te delen met anderen. Mijn doel is om mijn manier van werken te laten zien, en hopelijk kan ik hiermee een plek vinden bij een bedrijf waar ik verder kan groeien.</p>
+        <p id="thankYou">Bedankt voor het bekijken van mijn portfolio! Ik hoop dat je iets interessants vindt en dat we misschien ooit kunnen samenwerken. Als je meer wilt weten of contact met mij wilt opnemen, aarzel dan niet om dat te doen. Ik kijk ernaar uit om te horen van je!</p>
     </div>
 </div>
 
-<!-- JavaScript for Meteorites and Explosion -->
+<p id="meteorite-text">click op de meteorieten!</p>
+
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const meteoriteImage = 'https://opengameart.org/sites/default/files/Asteroid%20Brown.png';
-        const explosionImage = 'assets/gif/vciazx9woomb1.gif'; // Updated explosion image path
+        const explosionImage = 'assets/gif/vciazx9woomb1.gif';
 
         const meteoriteContainer = document.createElement('div');
         meteoriteContainer.style.position = 'absolute';
@@ -213,11 +212,10 @@
         meteoriteContainer.style.left = '0';
         meteoriteContainer.style.width = '100%';
         meteoriteContainer.style.height = '100%';
-        meteoriteContainer.style.zIndex = '2'; // Set z-index to make sure meteorites are above background but below content
-        meteoriteContainer.style.pointerEvents = 'none'; // Ensure meteorite container does not block scrolling or other interactions
+        meteoriteContainer.style.zIndex = '2';
+        meteoriteContainer.style.pointerEvents = 'none';
         document.body.appendChild(meteoriteContainer);
 
-        // Function to create random meteorites
         function createMeteorite() {
             const meteorite = document.createElement('img');
             meteorite.src = meteoriteImage;
@@ -225,40 +223,32 @@
             meteorite.style.width = '50px';
             meteorite.style.height = '50px';
             meteorite.style.transition = 'transform 0.1s linear';
-            meteorite.style.zIndex = '999'; // Ensure meteorites are still on top of the background
-            meteorite.style.pointerEvents = 'auto'; // Enable pointer events for meteorites (clickable)
+            meteorite.style.zIndex = '999';
+            meteorite.style.pointerEvents = 'auto';
 
-            // Randomly place meteorite
             const randomX = Math.random() * window.innerWidth;
             const randomY = Math.random() * window.innerHeight;
             meteorite.style.left = `${randomX}px`;
             meteorite.style.top = `${randomY}px`;
 
-            // Random rotation speed
-            const randomRotationSpeed = Math.random() * 0.5 + 0.1; // Slow rotation speed
+            const randomRotationSpeed = Math.random() * 0.5 + 0.1;
             meteorite.style.transform = `rotate(${Math.random() * 360}deg)`;
 
-            // Add meteorite to the container
             meteoriteContainer.appendChild(meteorite);
 
-            // Random movement direction
-            const randomAngle = Math.random() * 360; // Random direction
-            const randomSpeed = Math.random() * 0.5 + 0.1; // Slower random speed for movement (0.1 to 0.6)
+            const randomAngle = Math.random() * 360;
+            const randomSpeed = Math.random() * 0.5 + 0.1;
 
-            // Calculate velocity in X and Y direction based on angle
             const velocityX = Math.cos(randomAngle * Math.PI / 180) * randomSpeed;
             const velocityY = Math.sin(randomAngle * Math.PI / 180) * randomSpeed;
 
-            // Function to move meteorites in the calculated direction
             const moveMeteorite = () => {
                 let currentX = parseFloat(meteorite.style.left);
                 let currentY = parseFloat(meteorite.style.top);
 
-                // Update position based on velocity
                 currentX += velocityX;
                 currentY += velocityY;
 
-                // If meteorite goes off screen, wrap it around
                 if (currentX > window.innerWidth) currentX = 0;
                 if (currentX < 0) currentX = window.innerWidth;
                 if (currentY > window.innerHeight) currentY = 0;
@@ -267,20 +257,16 @@
                 meteorite.style.left = `${currentX}px`;
                 meteorite.style.top = `${currentY}px`;
 
-                // Random rotation effect for meteorite
                 meteorite.style.transform = `rotate(${parseFloat(meteorite.style.transform.replace('rotate(', '').replace('deg)', '')) + randomRotationSpeed}deg)`;
 
-                requestAnimationFrame(moveMeteorite); // Keep moving meteorite
+                requestAnimationFrame(moveMeteorite);
             };
 
-            // Start moving the meteorite in its random direction
             moveMeteorite();
 
-            // Explosion effect when clicked
             meteorite.addEventListener('click', function () {
-                meteorite.style.visibility = 'hidden'; // Immediately hide the meteorite
+                meteorite.style.visibility = 'hidden';
 
-                // Create explosion image
                 const explosion = document.createElement('img');
                 explosion.src = explosionImage;
                 explosion.style.position = 'absolute';
@@ -288,24 +274,82 @@
                 explosion.style.height = '100px';
                 explosion.style.left = meteorite.style.left;
                 explosion.style.top = meteorite.style.top;
-                explosion.style.zIndex = '1000'; // Explosion should appear above the text and meteorites
-                explosion.style.display = 'block'; // Ensure explosion is visible
+                explosion.style.zIndex = '1000';
+                explosion.style.display = 'block';
                 meteoriteContainer.appendChild(explosion);
 
-                // Remove explosion after 0.5 seconds
                 setTimeout(function () {
-                    explosion.remove(); // Remove explosion image
+                    explosion.remove();
                 }, 500);
             });
         }
 
-        // Create 20 meteorites on page load all at once
         for (let i = 0; i < 8; i++) {
             createMeteorite();
         }
-    });
 
+        var storedLanguage = localStorage.getItem("language");
+        if (storedLanguage === "en") {
+            toggleLanguage("en");
+        } else if (storedLanguage === "nl") {
+            toggleLanguage("nl");
+        } else {
+            localStorage.setItem("language", "nl");
+            toggleLanguage("nl");
+        }
+
+        function toggleLanguage(language) {
+            var portfolioTitle = document.getElementById("portfolioTitle");
+            var paragraphs = document.querySelectorAll('.center-circle p');
+            var button = document.getElementById("language-toggle");
+            var navLinks = document.querySelectorAll('nav a');
+            var meteoriteText = document.getElementById("meteorite-text");
+
+            if (language === "en") {
+                portfolioTitle.innerHTML = "Portfolio";
+                paragraphs[0].innerHTML = "I am studying Creative Media and Game Technologies and I really enjoy it here. I am looking for an internship where I can develop my creative ideas, and where design and innovation are important.";
+                paragraphs[1].innerHTML = "I love making new things, things that are sometimes a bit different from what you normally see. It's a challenge for me to turn my ideas into something people can really use and experience.";
+                paragraphs[2].innerHTML = "Recently, I have worked on several projects, such as making a game! In the *'Projects'* section, you can see more of what I have created. If you want to know more about me, you can read all about it in the *'About Me'* section.";
+                paragraphs[3].innerHTML = "I created this website as a portfolio to show where my interests lie and what I stand for. It's important for me to show that I love design and that I make the most of every opportunity I get.";
+                paragraphs[4].innerHTML = "I hope to inspire with my work and share my passion with others. My goal is to show my way of working, and hopefully, I can find a place at a company where I can continue to grow.";
+                paragraphs[5].innerHTML = "Thank you for viewing my portfolio! I hope you find something interesting and that we might collaborate someday. If you want to know more or contact me, feel free to do so. I look forward to hearing from you!";
+
+                navLinks[0].innerHTML = "Home";
+                navLinks[1].innerHTML = "About Me";
+                navLinks[2].innerHTML = "Projects";
+
+                meteoriteText.innerHTML = "Click on the meteorites!";
+
+                button.innerHTML = "Nederlands";
+
+                localStorage.setItem("language", "en");
+            } else {
+                portfolioTitle.innerHTML = "Portfolio";
+                paragraphs[0].innerHTML = "Ik studeer Creative Media and Game Technologies en ik heb het hier echt naar mijn zin. Ik ben op zoek naar een afstudeerstage waar ik mijn creatieve ideeën kan uitwerken, en waar design en innovatie belangrijk zijn.";
+                paragraphs[1].innerHTML = "Ik hou ervan om nieuwe dingen te maken, dingen die soms een beetje anders zijn dan wat je normaal ziet. Het is voor mij een uitdaging om mijn ideeën om te zetten in iets dat mensen echt kunnen gebruiken en beleven.";
+                paragraphs[2].innerHTML = "De afgelopen tijd heb ik aan verschillende projecten gewerkt, zoals het maken van een game! In de sectie *'Projecten'* kun je meer zien over wat ik heb gemaakt. Als je meer over mij wilt weten, kun je alles lezen in de *'About Me'* sectie.";
+                paragraphs[3].innerHTML = "Ik heb deze website gecreëerd als een portfolio om te laten zien waar mijn interesses liggen en waar ik voor sta. Het is voor mij belangrijk om te laten zien dat ik van design hou en dat ik elke kans die ik krijg, volledig benut.";
+                paragraphs[4].innerHTML = "Ik hoop met mijn werk te inspireren en mijn passie te delen met anderen. Mijn doel is om mijn manier van werken te laten zien, en hopelijk kan ik hiermee een plek vinden bij een bedrijf waar ik verder kan groeien.";
+                paragraphs[5].innerHTML = "Bedankt voor het bekijken van mijn portfolio! Ik hoop dat je iets interessants vindt en dat we misschien ooit kunnen samenwerken. Als je meer wilt weten of contact met mij wilt opnemen, aarzel dan niet om dat te doen. Ik kijk ernaar uit om te horen van je!";
+
+                navLinks[0].innerHTML = "Home";
+                navLinks[1].innerHTML = "Over mij";
+                navLinks[2].innerHTML = "Projecten";
+
+                meteoriteText.innerHTML = "Click op de meteorieten!";
+
+                button.innerHTML = "English";
+
+                localStorage.setItem("language", "nl");
+            }
+        }
+
+        document.getElementById('language-toggle').addEventListener('click', function() {
+            var currentLanguage = localStorage.getItem("language");
+            toggleLanguage(currentLanguage === "en" ? "nl" : "en");
+        });
+    });
 </script>
-<p>click op de meteorieten!</p>
+
 </body>
 </html>
