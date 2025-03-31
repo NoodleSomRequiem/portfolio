@@ -3,24 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Projects</title>
-    <!-- Link to Orbitron font from Google Fonts -->
+
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
 
     <style>
-        /* Global Styling */
+
         body {
-            font-family: 'Orbitron', sans-serif; /* Changed to Orbitron font */
+            font-family: 'Orbitron', sans-serif;
             margin: 0;
             padding: 0;
             background-image: url('assets/gif/1d735ad8eee8350adc96d50e1421ee6d.gif');
-            background-size: contain;  /* Makes the GIF smaller but still visible */
+            background-size: contain;
             background-position: center center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            background-color: black;  /* Fills the remaining space with black */
+            background-color: black;
         }
 
-        /* Top Navbar Styling */
         nav {
             background: radial-gradient(circle, rgba(0, 255, 255, 0.85) 0%, rgba(0, 255, 255, 0.65) 20%, rgba(0, 204, 204, 0.45) 40%, rgba(0, 204, 204, 0.25) 60%, rgba(0, 153, 153, 0.15) 80%, rgba(0, 102, 102, 0.05) 90%, rgba(0, 51, 51, 0.001) 100%);
             overflow: hidden;
@@ -36,24 +35,21 @@
             padding-bottom: 5px;
         }
 
-
         nav a {
             color: white;
             padding: 14px 20px;
             text-decoration: none;
             text-align: center;
-            font-family: 'Orbitron', sans-serif; /* Orbitron font applied here */
+            font-family: 'Orbitron', sans-serif;
             font-size: 28px;
             min-width: 120px;
         }
 
         nav a:hover {
-            background-color: rgba(0, 0, 0, 0.5); /* Doorzichtig zwart met 50% transparantie */
-            color: white; /* Zorg ervoor dat de tekstkleur nog steeds wit is */
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
         }
 
-
-        /* Button to Toggle Vertical Navbar */
         .toggle-btn {
             background: none;
             color: white;
@@ -71,27 +67,26 @@
             color: rgba(0, 255, 255, 0.65);
         }
 
-        /* Vertical Navbar Styling */
         .vertical-nav {
             position: fixed;
             top: 40px;
             left: 0;
-            width: 250px; /* Increased the width of the vertical navbar */
+            width: 250px;
             height: 100%;
             background: radial-gradient(circle, rgba(0, 255, 255, 0.85) 0%, rgba(0, 255, 255, 0.65) 20%, rgba(0, 204, 204, 0.45) 40%, rgba(0, 204, 204, 0.25) 60%, rgba(0, 153, 153, 0.15) 80%, rgba(0, 102, 102, 0.05) 90%, rgba(0, 51, 51, 0.001) 100%);
-            padding-top: 40px; /* Move navbar items down */
+            padding-top: 40px;
             display: block;
-            transition: transform 0.3s ease, left 0.3s ease; /* Added transition for left movement */
+            transition: transform 0.3s ease, left 0.3s ease;
         }
 
         .vertical-nav a {
             display: block;
             color: white;
-            padding: 20px 20px; /* Increased padding for more space between items */
+            padding: 20px 20px;
             text-decoration: none;
             text-align: left;
-            font-family: 'Orbitron', sans-serif; /* Orbitron font applied here */
-            font-size: 18px; /* Reduced font size for better fit */
+            font-family: 'Orbitron', sans-serif;
+            font-size: 18px;
         }
 
         .vertical-nav a:hover {
@@ -104,9 +99,10 @@
             transition: margin-left 0.3s ease;
             margin-left: 250px;
             width: calc(100% - 250px);
-            position: relative; /* Added to prevent vertical movement */
-            top: 0; /* Ensures it stays at the same height */
+            position: relative;
+            top: 0;
         }
+
         .content {
             display: flex;
             flex-direction: column;
@@ -124,7 +120,7 @@
             left: -250px;
         }
 
-        /* This class shifts content to the right when the navbar is visible */
+
         .content-container.nav-open {
             margin-left: 250px;
         }
@@ -134,26 +130,22 @@
             width: calc(100% - 30px);
         }
 
-
-        /* Styling for the image that will expand on navbar toggle */
-        /* Styling for the flipped image and positioning it */
         .expandable-image {
             position: fixed;
-            top: 50%; /* Vertically centers the image */
-            right: -100px; /* Start off-screen to the right */
-            width: 70px; /* Initially very small */
+            top: 50%;
+            right: -100px;
+            width: 70px;
             height: auto;
-            transform: translateY(-50%) scaleX(-1); /* Flip the image horizontally */
+            transform: translateY(-50%) scaleX(-1);
             transition: right 0.3s ease, width 0.3s ease;
             z-index: 2;
         }
 
         .vertical-nav.hidden ~ .expandable-image {
-            right: 0; /* Image moves to the right when navbar is hidden */
-            width: 250px; /* Expands when the navbar is hidden */
+            right: 0;
+            width: 250px;
         }
 
-        /* Styling for the videos */
         .video-container {
             margin-top: 20px;
             border-radius: 10px;
@@ -165,10 +157,9 @@
             padding: 10px;
         }
 
-        /* Buttons to select videos */
         .video-buttons {
             display: flex;
-            gap: 10px; /* Voegt ruimte toe tussen de knoppen */
+            gap: 10px;
         }
 
         .video-button {
@@ -189,37 +180,52 @@
         html {
             scroll-behavior: smooth;
         }
+
         .project-image {
-            width: 300px; /* Pas dit aan naar de gewenste grootte */
-            height: auto; /* Houdt de verhoudingen correct */
-            object-fit: cover; /* Zorgt ervoor dat de afbeelding wordt bijgesneden in plaats van vervormd */
-            display: block; /* Voorkomt ongewenste witte ruimte */
-        } h2 {
-              font-size: 36px; /* Pas de grootte aan naar de gewenste waarde */
-              font-weight: bold; /* Zorg ervoor dat de tekst vetgedrukt is voor extra nadruk */
-              margin-bottom: 20px; /* Voeg wat ruimte toe onder de titel */
-          }
+            width: 300px;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+
+        h2 {
+              font-size: 36px;
+              font-weight: bold;
+              margin-bottom: 20px;
+        }
+
         h4 {
-            font-size: 28px; /* Pas de grootte aan naar de gewenste waarde */
-            font-weight: normal; /* Maak de ondertitel niet vetgedrukt */
-            margin-bottom: 15px; /* Voeg wat ruimte toe onder de ondertitel */
+            font-size: 28px;
+            font-weight: normal;
+            margin-bottom: 15px;
+        }
+
+        .language-toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #00dada;
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
         }
 
     </style>
 </head>
 <body>
 
-<!-- Button to Toggle Vertical Navbar -->
+<button class="language-toggle" id="languageToggle">English(?)</button>
 <button class="toggle-btn" id="toggleNavBtn">☰</button>
 
-<!-- Navbar (top) -->
 <nav>
     <a href="index.html">Home</a>
     <a href="aboutMe.html">Over mij</a>
     <a href="projects.html">Projecten</a>
 </nav>
 
-<!-- Vertical Sidebar Navbar (only on projects page) -->
 <div class="vertical-nav" id="verticalNav">
     <a href="#project1">Stage jaar 3</a>
     <a href="#project2">Minor Game Development</a>
@@ -227,21 +233,17 @@
     <a href="#terug">Bovenkant van de pagina</a>
 </div>
 
-<!-- Message to display when image is clicked -->
 <div id="imageMessage" style="position: fixed; top: 40%; right: 0; z-index: 3; font-family: 'Orbitron', sans-serif; color: white; font-size: 18px; padding-right: 10px; text-align: right;"></div>
 
-<!-- Image that expands on navbar toggle -->
 <img src="https://opengameart.org/sites/default/files/robot-preview.png"
      class="expandable-image"
      id="expandableImage"
      alt="Expandable Image"
      style="width: 70px; height: auto;">
 
-
-
-<!-- Main Content Area -->
 <div class="content-container" id="contentContainer">
     <div >
+
         <div id="terug" class="content">
         <h1>Projecten </h1>
         <p>In 2021 begon ik mijn studie en vanaf het begin was ik enthousiast over de opleiding. Het was meteen duidelijk dat dit de richting was waarin ik verder wilde gaan. In de eerste paar jaren van mijn studie heb ik me verdiept in verschillende aspecten van de technologie, waarvan de meeste projecten te maken hadden met programmeren. Toch had ik ook veel variatie, waardoor mijn ervaring breder werd dan alleen coderen.</p>
@@ -250,6 +252,7 @@
 
         <p>Het is voor mij altijd een singetje geweest om te leren en te experimenteren met nieuwe tools en technieken, en ik ben er trots op dat ik zoveel verschillende kanten van de game- en softwareontwikkeling heb mogen zien. Mijn reis in de technologie is pas net begonnen, en ik kijk ernaar uit om in de toekomst nog veel meer te creëren!</p>
         </div>
+
         <div id="project1" class="content">
             <h2>Stage jaar 3</h2>
             <h4>Vectory 3</h4>
@@ -265,7 +268,6 @@
             <h4>Wat vond ik er van?</h4>
             <p>Desondanks was het een waardevolle ervaring die me veel heeft geleerd over het werken met 3D-modellen, het ontwikkelen van detectiesystemen en het implementeren van algoritmes in een technische omgeving. Hoewel het niet de meest inspirerende stage was, was het een belangrijke stap in mijn groei als creatieve ontwikkelaar.</p>
 
-            <!-- Video under Project 1 -->
             <div class="video-container">
                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/PqoMpfooCq0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -273,89 +275,110 @@
 
         <div id="project2" class="content">
             <h2>Minor Game Development</h2>
+
             <h4>Wat vond ik er van?</h4>
+
             <p>De minor was voor mij echt een fantastische ervaring. Ik had het zo naar mijn zin en heb ontzettend veel nieuwe dingen geleerd. Gedurende de minor werkte ik aan twee verschillende games, wat een geweldige kans was om mijn vaardigheden te ontwikkelen en uit te breiden. De eerste game waaraan ik werkte, was een 2D mobile game genaamd <i>Lanselot's Adventure</i>, en de tweede was een 3D PC game genaamd <i>Re:spaced</i>.</p>
             <h4>Inhoud 2D game</h4>
+
             <p>De 2D game was echt een super leuke ervaring. In een team van zes mensen was ik de artist die voornamelijk werkte aan de pixel achtergronden en het level design. Ik was verantwoordelijk voor world building, waarbij ik verschillende omgevingen en levels creëerde die de speler door het spel zou leiden. Ook heb ik een beetje gewerkt aan sound design, wat ik erg leuk vond. Dit alles werkte ik samen met een team, en het samenwerken met anderen in een dynamisch teamverband was een leerzame ervaring. Dit heeft een geweldige fundering gelegd voor het volgende onderdeel van de minor, waarin ik besloot me volledig te focussen op sound design voor de game <i>Re:spaced</i>.</p>
+
            <p style="font-family: 'Arial', sans-serif; font-size: 14px;">Studio logo en een background asset als voorbeeld (tower)</p>
+
             <div class="image-container" >
                 <img src="assets/picture/pixil-frame-0%20(79).png" alt="Image 2" class="project-image">
                 <img src="assets/picture/pixil-frame-0%20(64).png" alt="Image 1" class="project-image">
+
             </div>
+
             <h4>Keuze van mijn volgende rol</h4>
+
             <p>Het sound design voor de eerste game was zo leuk, dat ik ervoor koos om me in de tweede game volledig te richten op geluid. Ik wilde alles zelf maken, wat in het begin best moeilijk was, aangezien ik nog nooit muziek had gemaakt. Ik begon met het verwerken van samples in Audacity en werkte langzaam maar zeker op naar het gebruik van FL Studio voor het produceren van muziek. Hier is een voorbeeld van mijn eerste tune:</p>
 
             <P style="font-family: 'Arial', sans-serif; font-size: 14px;">Eerste tune ooit gemaakt (met trots)</P>
+
             <audio controls>
                 <source src="assets/audio/D%26B%201%20%28first%20ever%29.wav" type="audio/wav">
             </audio>
 
-
             <p>Na wat onderzoek had ik besloten om het drum & bass genre te kiezen voor de muziek, omdat we een first-person shooter aan het maken waren. Bij het doen van onderzoek ontdekte ik dat bekende games zoals <i>Doom</i> en <i>Ultrakill</i> dezelfde muziekstijl hadden, wat me motiveerde om dit genre voor onze game aan te houden.</p>
+
             <h4>Ontwikkeling in de muziek</h4>
+
             <p>Mijn ontwikkeling ging snel, en ik leerde veel in een korte tijd. Ik produceerde al snel mijn tweede en derde tune:</p>
 
             <P style="font-family: 'Arial', sans-serif; font-size: 14px;">2e tune ooit gemaakt, betere mixing maar nog niet helemaal daar</P>
+
             <audio controls>
                 <source src="assets/audio/D%26B%202%20%28arcadey%29.wav" type="audio/wav">
             </audio>
 
             <p style="font-family: 'Arial', sans-serif; font-size: 14px;">3e tune begint er op te lijken! </p>
+
             <audio controls>
                 <source src="assets/audio/D%26B%203%20%28goofy%2C%20experimental%2C%20favorite%29.wav" type="audio/wav">
             </audio>
 
             <h4>Experimentatie</h4>
+
             <p>Gedurende deze tijd merkte ik dat er hier en daar wat mixingproblemen waren, die ik vervolgens oploste. Ik werkte echt enorm veel aan de muziek. Na school ging ik direct thuis verder, omdat ik het zo leuk vond. Ik ontdekte al snel dat ik er een goed gevoel voor had, en dat motiveerde me om te blijven experimenteren met verschillende muziekgenres. Hier is nog een voorbeeld van een paar andere tunes die ik in een ander genre maakte:</p>
 
             <p style="font-family: 'Arial', sans-serif; font-size: 14px;">Een disco tune, een party favorite die ook in de game zit!</p>
+
             <audio controls>
                 <source src="assets/audio/disco%202.wav" type="audio/wav">
             </audio>
 
-
             <p style="font-family: 'Arial', sans-serif; font-size: 14px;">Super experimentele horror tune</p>
+
             <audio controls>
                 <source src="assets/audio/environmental%20tune.wav" type="audio/wav">
             </audio>
 
-
             <p style="font-family: 'Arial', sans-serif; font-size: 14px;">Phonk tune, geen idee waarom ik dit wilde maken</p>
+
             <audio controls>
                 <source src="assets/audio/phonk%20tune.wav" type="audio/wav">
             </audio>
+
             <p style="font-family: 'Arial', sans-serif; font-size: 14px;">Piano tune (was oprecht vergeten dat ik dit had gemaakt maar vond hem zeker 'worth the mention')</p>
+
             <audio controls>
                 <source src="assets/audio/piano%20tune.wav" type="audio/wav">
             </audio>
+
             <p style="font-family: 'Arial', sans-serif; font-size: 14px;">Weer een random experiment</p>
+
             <audio controls>
                 <source src="assets/audio/throwaway%20experiment.wav" type="audio/wav">
             </audio>
 
             <h4>Eindresultaat</h4>
+
             <p>Door alles samen te voegen, veel feedback van andere teamleden te verwerken en overleg te voeren met designers, kwam ik uit op de ultieme mixtape voor de game! Ik maakte een 8 minuten durende tune met verschillende sounds, inclusief een 'boss' tune:</p>
+
             <p style="font-family: 'Arial', sans-serif; font-size: 14px;">De volledige, loopable, sound track voor de main gameplay!</p>
-            <p style="font-family: 'Arial', sans-serif; font-size: 14px;">Hier merk je echt zowat direct al mijn voortgang in mixing (<a href="#" id="jumpToTime">04:50 best part!</a>).</p>
+
+            <p style="font-family: 'Arial', sans-serif; font-size: 14px;">Hier merk je echt zowat direct al mijn voortgang in mixing (<a href="#" id="jumpToTime" style="color: darkgrey;">04:50 best part!</a>).</p>
 
             <audio controls id="audioPlayer">
                 <source src="assets/audio/final%20tune.wav" type="audio/wav">
             </audio>
 
             <script>
-                // Zoek de link en de audio speler op
+
                 const jumpLink = document.getElementById('jumpToTime');
                 const audioPlayer = document.getElementById('audioPlayer');
 
-                // Zet de tijd naar 04:50 (290 seconden) wanneer de link wordt aangeklikt
                 jumpLink.addEventListener('click', function(e) {
-                    e.preventDefault();  // Voorkom de standaard actie van de link
-                    audioPlayer.currentTime = 290;  // 04:50 is 290 seconden
-                    audioPlayer.play();  // Speel de audio vanaf die tijd
+                    e.preventDefault();
+                    audioPlayer.currentTime = 290;
+                    audioPlayer.play();
                 });
             </script>
 
-            <p style="font-family: 'Arial', sans-serif; font-size: 14px;">De crazy boss fight tune! (<a href="javascript:void(0);" onclick="skipToBestPart()">best part 01:35!</a>)</p>
+            <p style="font-family: 'Arial', sans-serif; font-size: 14px;">De crazy boss fight tune! (<a href="javascript:void(0);" onclick="skipToBestPart()" style="color: darkgrey;">best part 01:35!</a>)</p>
+
             <audio id="bossFightAudio" controls>
                 <source src="assets/audio/boss%20fight%20tune.wav" type="audio/wav">
             </audio>
@@ -364,18 +387,21 @@
                 const bossFightAudio = document.getElementById('bossFightAudio');
 
                 function skipToBestPart() {
-                    bossFightAudio.currentTime = 95; // 01:35 is 95 seconden
+                    bossFightAudio.currentTime = 95;
                     bossFightAudio.play();
                 }
             </script>
 
             <script>
                 document.querySelectorAll('audio').forEach(function(audioElement) {
-                    audioElement.volume = 0.2; // Zet het volume op 50% (halverwege)
+                    audioElement.volume = 0.2;
                 });
             </script>
+
             <h4>Easter eggs</h4>
+
             <p>Verder houd ik erg van easter eggs, en heb ik 4 'hidden documents' over de map verspreid om onze spelers alert te houden.</p>
+
             <div class="image-container">
                 <img src="assets/picture/secret%20doc%201.png" alt="Image 4" class="small-project-image">
                 <img src="assets/picture/secret%20doc%202.png" alt="Image 5" class="small-project-image">
@@ -396,12 +422,15 @@
                     border-radius: 8px; /* Optioneel voor een afgeronde rand */
                 }
             </style>
+
             <h4>Conclusie</h4>
+
             <p>Wat ik vooral heb geleerd in deze minor is dat teamwork essentieel is. Je werkt samen met anderen, en niet iedereen is het altijd met elkaar eens. Zo had onze art lead vrijwel niks wat we deden goed gevonden en liet ons veel dingen opnieuw doen, zonder dat er echt een duidelijke reden voor was, alleen omdat zij het “niet leuk” vond. Dit zijn keuzes die je maakt als team, en uiteindelijk besef je waar ieders kwaliteiten liggen. Haar kwaliteiten lagen duidelijk niet in teamleiding, en uiteindelijk nam iemand anders die rol over. Dit was een belangrijke les in leiderschap en teamdynamiek.</p>
 
             <p>Wat ik wel merkte, is dat ik mijn rol als artist heel prettig vond, en dat ik daar goed in was. Samen met onze programmeur, meneer Mikko, hebben we alles in Unity gezet. De sound speelde een cruciale rol in de game en gaf het spel de sfeer die we nodig hadden.</p>
 
-            <p>Bekijk zelf <a href="https://store.steampowered.com/app/3380820/ReSpaced/" target="_blank">Re:spaced</a>, een rogue-like space FPS die zich focust op mobiliteit. Het wapen in het spel heeft zoveel recoil dat je door de map kunt vliegen, en na elk level krijg je upgrades waaruit je kunt kiezen om je karakter te verbeteren. Het doel is om door alle levels heen te vliegen zonder dood te gaan en uiteindelijk de eindbaas te verslaan.</p>
+            <p>Bekijk zelf <a href="https://store.steampowered.com/app/3380820/ReSpaced/" target="_blank" style="color: darkgrey;">Re:spaced</a>
+                , een rogue-like space FPS die zich focust op mobiliteit. Het wapen in het spel heeft zoveel recoil dat je door de map kunt vliegen, en na elk level krijg je upgrades waaruit je kunt kiezen om je karakter te verbeteren. Het doel is om door alle levels heen te vliegen zonder dood te gaan en uiteindelijk de eindbaas te verslaan.</p>
         </div>
 
         <div id="project3" class="content">
@@ -414,37 +443,38 @@
             </p>
 
             <h3>Programmeren 5</h3>
+
             <p>
-                <a href="https://github.com/NoodleSomRequiem/programm5" target="_blank">Klik hier voor Programmeren 5</a>
+                <a href="https://github.com/NoodleSomRequiem/programm5" target="_blank" style="color: darkgrey;"> Klik hier voor Programmeren 5</a>
             </p>
-            <p>
-                Voor Programmeren 5 werkten wij met het framework Laravel. Laravel is een PHP-framework dat gebaseerd is op het MVC-patroon
+
+            <p>Voor Programmeren 5 werkten wij met het framework Laravel. Laravel is een PHP-framework dat gebaseerd is op het MVC-patroon
                 (Model View Controller). Dit betekent dat de applicatie gestructureerd is in drie lagen:
+
             <ul>
                 <li><strong>Model</strong>: Beheert de data en de logica van de applicatie.</li>
                 <li><strong>View</strong>: Zorgt voor de weergave van de data aan de gebruiker.</li>
                 <li><strong>Controller</strong>: Verbindt de Model- en View-laag door gebruikersinvoer te verwerken.</li>
+
             </ul>
+
             Laravel biedt veel ingebouwde functionaliteiten zoals authenticatie, routing, databasebeheer en meer, waardoor
-            het ontwikkelen van webapplicaties efficiënter wordt.
-            </p>
+            het ontwikkelen van webapplicaties efficiënter wordt.</p>
 
             <h3>Programmeren 6</h3>
 
-            <p>
-                <a href="https://github.com/NoodleSomRequiem/PRG06-BACKEND" target="_blank">Klik hier voor Programmeren 6 Backend</a><br>
-                <a href="https://github.com/NoodleSomRequiem/PRG06-FRONTEND" target="_blank">Klik hier voor Programmeren 6 Frontend</a>
-            </p>
-            <p>
-                Tijdens deze module hebben we een volledige webstack toegepast met MongoDB, Express, React en Node.js (MERN-stack).
+            <p><a href="https://github.com/NoodleSomRequiem/PRG06-BACKEND" target="_blank" style="color: darkgrey;">Klik hier voor Programmeren 6 Backend</a><br>
+                <a href="https://github.com/NoodleSomRequiem/PRG06-FRONTEND" target="_blank" style="color: darkgrey;">Klik hier voor Programmeren 6 Frontend</a></p>
+
+            <p>Tijdens deze module hebben we een volledige webstack toegepast met MongoDB, Express, React en Node.js (MERN-stack).
                 Dit gaf ons een goed inzicht in zowel de server- als de front-endontwikkeling. De theorie en praktijk
-                van RESTful API's en MVC-gebaseerde frameworks waren hierbij essentieel.
-            </p>
+                van RESTful API's en MVC-gebaseerde frameworks waren hierbij essentieel.</p>
+
             <div class="video-buttons">
             <button class="video-button" id="video1Btn">Video 1</button>
             <button class="video-button" id="video2Btn">Video 2</button>
             </div>
-            <!-- Video Container for Project 3 -->
+
             <div id="videoContainer3" class="video-container">
                 <iframe id="project3Video" width="100%" height="315"
                         src="https://www.youtube.com/embed/zNTrZkxOslc"
@@ -454,31 +484,27 @@
             </div>
 
             <h3>Programmeren 7</h3>
-            <p>
-                <a href="https://github.com/NoodleSomRequiem/Roffa_souls" target="_blank">Klik hier voor Programmeren 7</a>
-            </p>
-            <p>
-                In deze module hebben we mobiele applicaties ontwikkeld met React Native, een framework dat geschikt is voor zowel
+            <p><a href="https://github.com/NoodleSomRequiem/Roffa_souls" target="_blank" style="color: darkgrey;">Klik hier voor Programmeren 7</a></p>
+
+            <p>In deze module hebben we mobiele applicaties ontwikkeld met React Native, een framework dat geschikt is voor zowel
                 Android als iOS. Door moderne technologieën in telefoons te benutten, konden we apps bouwen die gebruik maken van
-                sensoren, API's en verschillende interacties om de gebruikerservaring te optimaliseren.
-            </p>
+                sensoren, API's en verschillende interacties om de gebruikerservaring te optimaliseren.</p>
 
             <h3>Huidig Project - PLE</h3>
-            <p>
-                Op dit moment ben ik bezig met het ontwikkelen van een website voor PLE, waarbij ik een AI-chatbot bouw die religieuze
+
+            <p>Op dit moment ben ik bezig met het ontwikkelen van een website voor PLE, waarbij ik een AI-chatbot bouw die religieuze
                 misverstanden helpt oplossen. Deze chatbot beantwoordt niche-vragen tot in precisie en is ontworpen om correcte
-                en betrouwbare informatie te verschaffen over religieuze onderwerpen.
-            </p>
+                en betrouwbare informatie te verschaffen over religieuze onderwerpen.</p>
 
         </div>
 
     </div>
 </div>
+
 <div id="audioGifContainer" style="display: none; position: fixed; bottom: 20px; right: 20px;">
     <img src="assets/gif/3PkLWL6.gif" alt="Playing GIF" id="audioGif">
 </div>
 
-<!-- JavaScript to Toggle the Vertical Navbar and Handle Video Selection -->
 <script>
     const toggleBtn = document.getElementById('toggleNavBtn');
     const verticalNav = document.getElementById('verticalNav');
@@ -488,34 +514,26 @@
     const audioElements = document.querySelectorAll('audio');
     const audioGifContainer = document.getElementById('audioGifContainer');
 
-    // Set initial message text
     let clickCount = 0;
 
-    // Het menu openen en sluiten bij klikken op de toggle knop
     toggleBtn.addEventListener('click', function() {
-        // Toggle de zichtbaarheid van de verticale navigatie
         verticalNav.classList.toggle('hidden');
 
-        // Toggle de positie van de content container
         contentContainer.classList.toggle('nav-open');
         contentContainer.classList.toggle('nav-closed');
 
-        // Reset de tekst en klik teller wanneer het menu open is (eerste klik om te sluiten)
         if (!verticalNav.classList.contains('hidden')) {
-            imageMessage.textContent = '';  // Wis het bericht
-            clickCount = 0;  // Reset de klik teller
+            imageMessage.textContent = '';
+            clickCount = 0;
         }
     });
 
-    // Verander het bericht bij het klikken op de afbeelding
     expandableImage.addEventListener('click', function() {
         clickCount++;
 
-        // Check of het de 25ste klik is
         if (clickCount === 25) {
             imageMessage.textContent = "STOOOOOP!!!";
         } else if (clickCount < 25) {
-            // Verander het bericht afhankelijk van het aantal klikken
             if (clickCount === 1) {
                 imageMessage.textContent = "Hi!";
             } else if (clickCount === 2) {
@@ -525,15 +543,39 @@
             } else if (clickCount === 4) {
                 imageMessage.textContent = "HMPF...";
             } else {
-                imageMessage.textContent = "HMPF..."; // Herhaal na de vierde klik
+                imageMessage.textContent = "HMPF...";
             }
         } else {
-            // Na de 25ste klik, blijf "STOOOOOP!!!" tonen
             imageMessage.textContent = "STOOOOOP!!!";
         }
     });
 
-    // Video knoppen voor Project 3
+    document.getElementById("languageToggle").addEventListener("click", function() {
+        clickCount++;
+
+        switch (clickCount) {
+            case 1:
+                this.textContent = "oops";
+                break;
+            case 2:
+                this.textContent = "yeaaa";
+                break;
+            case 3:
+                this.textContent = "sorry";
+                break;
+            case 4:
+                this.textContent = "too lazy to translate all of this";
+                break;
+            case 5:
+                this.textContent = "bye!";
+                break;
+            default:
+                clickCount = 0;
+                this.textContent = "English(?)";
+                break;
+        }
+    });
+
     const video1Btn = document.getElementById('video1Btn');
     const video2Btn = document.getElementById('video2Btn');
     const project3Video = document.getElementById('project3Video');
@@ -546,21 +588,19 @@
         project3Video.src = "https://www.youtube.com/embed/ssw8gvhQ8T4";
     });
 
-    // Toevoegen van smooth scroll met offset voor de verticale navigatie links
     const navLinks = document.querySelectorAll('.vertical-nav a');
-    const navbarHeight = document.querySelector('nav').offsetHeight; // Verkrijg de hoogte van de navbar
+    const navbarHeight = document.querySelector('nav').offsetHeight;
 
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault(); // Voorkom de standaard klikactie
+            e.preventDefault();
 
-            const targetId = this.getAttribute('href').substring(1); // Verkrijg de target sectie id
-            const targetElement = document.getElementById(targetId); // Vind het doel element
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
 
-            // Scroll naar het doel element, met aanpassing voor de hoogte van de navbar
             window.scrollTo({
-                top: targetElement.offsetTop - navbarHeight, // Pas de scroll positie aan met de navbar hoogte
-                behavior: 'smooth' // Smooth scrolling effect
+                top: targetElement.offsetTop - navbarHeight,
+                behavior: 'smooth'
             });
         });
     });
@@ -573,7 +613,6 @@
             }
         });
 
-        // Toon de GIF als er audio afspeelt, verberg anders
         if (isPlaying) {
             audioGifContainer.style.display = "block";
         } else {
@@ -581,14 +620,12 @@
         }
     }
 
-    // Voeg event listeners toe aan alle audio-elementen
     audioElements.forEach(audio => {
         audio.addEventListener('play', checkAudioPlaying);
         audio.addEventListener('pause', checkAudioPlaying);
-        audio.addEventListener('ended', checkAudioPlaying); // Zorgt ervoor dat de GIF verdwijnt als audio eindigt
+        audio.addEventListener('ended', checkAudioPlaying);
     });
 
 </script>
-
 </body>
 </html>
