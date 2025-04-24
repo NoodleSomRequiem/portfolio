@@ -138,6 +138,30 @@
             cursor: pointer;
             z-index: 10;
         }
+        .personal-info-fixed {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-family: 'Orbitron', sans-serif;
+            color: white;
+            text-align: left;
+            width: 180px;
+            box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.5);
+            z-index: 999;
+            text-shadow: 0 0 5px rgba(255,255,255,0.3);
+        }
+
+        @media screen and (max-width: 1000px) {
+            .photo-container,
+            .personal-info-fixed {
+                display: none !important;
+            }
+        }
 
     </style>
 </head>
@@ -161,6 +185,7 @@
             <p id="paragraph4">Bekijk gerust mijn projecten om te zien wat ik heb gemaakt. En als je denkt dat we goed bij elkaar passen, neem dan gerust contact op!</p>
         </div>
     </div>
+
 </div>
 
 <div class="photo-container" onmousedown="stopRotation(this)" onmouseup="startRotation(this)" onmouseleave="startRotation(this)">
@@ -201,9 +226,15 @@
                 document.getElementById('paragraph2').textContent = 'Naast gamen ben ik veel bezig met fitness. Het is voor mij belangrijk om zowel fysiek als mentaal gezond te blijven. Sport helpt me niet alleen sterker te worden, maar ook scherp en in balans te blijven.';
                 document.getElementById('paragraph3').textContent = 'Ik zoek een afstudeerstage waar ik mijn creativiteit kan inzetten en nieuwe dingen kan leren. Ik wil werken aan toffe projecten waarin design en innovatie belangrijk zijn.';
                 document.getElementById('paragraph4').textContent = 'Bekijk gerust mijn projecten om te zien wat ik heb gemaakt. En als je denkt dat we goed bij elkaar passen, neem dan gerust contact op!';
+
+                // Voeg deze toe:
+                document.getElementById('infoTitle').textContent = 'Persoonlijke Gegevens';
+                document.getElementById('addressLine').textContent = 'Adres: Geert van Oorschotstraat 10, 3059TS Rotterdam';
+                document.getElementById('phoneLine').textContent = 'Tel: 06 46796070';
+                document.getElementById('dobLine').textContent = 'Geb: 30 okt 2003 (21)';
+                document.getElementById('emailLine').textContent = 'semvanveen@outlook.com';
             } else {
                 document.getElementById('languageToggle').textContent = 'Nederlands';
-
                 document.getElementById('home-link').textContent = 'Home';
                 document.getElementById('about-link').textContent = 'About Me';
                 document.getElementById('projects-link').textContent = 'Projects';
@@ -213,6 +244,13 @@
                 document.getElementById('paragraph2').textContent = "Besides gaming, I'm really into fitness. It's important for me to stay healthy both physically and mentally. Sports not only help me become stronger but also keep me sharp and balanced.";
                 document.getElementById('paragraph3').textContent = "I'm looking for an internship where I can use my creativity and learn new things. I want to work on cool projects that focus on design and innovation.";
                 document.getElementById('paragraph4').textContent = "Feel free to check out my projects to see what I've created. And if you think we could be a good match, don't hesitate to get in touch!";
+
+                // Voeg deze toe:
+                document.getElementById('infoTitle').textContent = 'Personal Info';
+                document.getElementById('addressLine').textContent = 'Address: Geert van Oorschotstraat 10, 3059TS Rotterdam';
+                document.getElementById('phoneLine').textContent = 'Phone: +31 6 46796070';
+                document.getElementById('dobLine').textContent = 'DOB: Oct 30, 2003 (21)';
+                document.getElementById('emailLine').textContent = 'semvanveen@outlook.com';
             }
         }
 
@@ -233,6 +271,14 @@
     });
 
 </script>
-
+<div class="personal-info-fixed">
+    <p id="personalInfo">
+        <strong id="infoTitle">Persoonlijke Gegevens</strong><br>
+        <span id="addressLine">Adres: Geert van Oorschotstraat 10, 3059TS Rotterdam</span><br>
+        <span id="phoneLine">Tel: 06 46796070</span><br>
+        <span id="dobLine">Geb: 30 okt 2003 (21)</span><br>
+        <a href="mailto:semvanveen@outlook.com" style="color: white;" id="emailLine">semvanveen@outlook.com</a>
+    </p>
+</div>
 </body>
 </html>
