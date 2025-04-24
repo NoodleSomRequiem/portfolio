@@ -170,6 +170,35 @@
             }
         }
 
+        .arrow {
+            position: fixed;
+            top: 50%;
+            font-size: 30px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+            transform: translateY(-50%);
+            display: none;
+        }
+
+        .arrow.left {
+            left: 20px;
+        }
+
+        .arrow.right {
+            right: 20px;
+        }
+
+        @media screen and (max-width: 1400px) {
+            .arrow {
+                display: block;
+            }
+        }
+
+
     </style>
 </head>
 <body>
@@ -287,5 +316,7 @@
         <a href="mailto:semvanveen@outlook.com" style="color: white;" id="emailLine">semvanveen@outlook.com</a>
     </p>
 </div>
+<div class="arrow left" id="leftArrow">&#8592;</div>
+<div class="arrow right" id="rightArrow">&#8594;</div>
 </body>
 </html>
