@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
     <style>
 
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&display=swap');
@@ -11,20 +11,17 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://i.redd.it/steam-background-gif-dump-use-them-for-any-purpose-the-main-v0-2lkcq11e8i9b1.gif?width=600&auto=webp&s=4b92d51660b515f8d01572638ce10274be85fa27');
+            background-image: url('https://giffiles.alphacoders.com/212/212550.gif');
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
             height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            color: white;
             overflow: hidden;
         }
 
         nav {
-            background: radial-gradient(circle, rgba(144, 238, 144, 0.85) 0%, rgba(144, 238, 144, 0.65) 20%, rgba(144, 238, 144, 0.45) 40%, rgba(144, 238, 144, 0.25) 60%, rgba(144, 238, 144, 0.15) 80%, rgba(144, 238, 144, 0.05) 90%, rgba(144, 238, 144, 0.001) 100%);
+            background: radial-gradient(circle, rgba(255, 69, 69, 0.85) 0%, rgba(255, 69, 69, 0.65) 20%, rgba(255, 69, 69, 0.45) 40%, rgba(255, 69, 69, 0.25) 60%, rgba(255, 69, 69, 0.15) 80%, rgba(255, 69, 69, 0.05) 90%, rgba(255, 69, 69, 0.001) 100%);
             overflow: hidden;
             z-index: 1;
             position: fixed;
@@ -53,140 +50,151 @@
             color: white;
         }
 
-        .center-circle {
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(144, 238, 144, 0.6) 0%, rgba(144, 238, 144, 0.4) 25%, rgba(144, 238, 144, 0.2) 50%, rgba(144, 238, 144, 0.1) 75%, rgba(144, 238, 144, 0.05) 100%);
-            overflow: hidden;
-            padding: 30px;
-            position: relative;
+        .about-me-container {
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            max-width: 100%;
-            margin-top: 100px;
-        }
-
-        .center-circle h1, .center-circle p {
-            margin: 0;
+            align-items: center;
+            height: 100vh;
             text-align: center;
-            font-size: 24px;
-            line-height: 1.8;
-            color: black;
-            max-width: 90%;
-            padding-right: 20px;
-            word-wrap: break-word;
-            padding-left: 50px;
-            margin-bottom: 15px;
+            max-width: 600px;
+            margin: auto;
+            width: 100%;
+        }
+
+        .about-me-text {
             font-family: 'Orbitron', sans-serif;
+            color: #fff;
+            background-color: rgba(255, 0, 0, 0.2);
+            line-height: 1.4;
+            text-align: center;
+            text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.75);
+            padding: 15px; /* Minder padding */
+            border-radius: 15px;
+            box-shadow: 0px 0px 30px rgba(255, 0, 0, 0.4);
+            font-size: 16px;
+            max-width: 500px;
         }
 
-        .center-circle h1 {
-            margin-top: 15px;
-        }
-
-        .scrollable-content {
-            max-height: 600px;
-            overflow-y: auto;
-            padding-right: 20px;
-            max-width: 100%;
-        }
-
-        .scrollable-content::-webkit-scrollbar {
-            width: 6px;
-            height: 1px;
-        }
-
-        .scrollable-content::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        .scrollable-content::-webkit-scrollbar-thumb {
-            background-color: rgba(144, 238, 144, 0.6);
-            border-radius: 10px;
-        }
-
-        .portfolio-text {
+        .photo-container {
             position: absolute;
-            top: 7%;
-            left: 50%;
-            transform: translateX(-50%);
-            font-family: 'Orbitron', sans-serif;
-            font-size: 120px;
-            font-weight: bold;
-            color: rgba(0, 0, 0, 0.8);
-            z-index: 2;
+            left: 10%;
+            top: 30%;
+            transform: translateY(-50%);
+            padding: 10px;
+            border: 10px solid rgba(255, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.7);
+            animation: float 5s ease-in-out infinite, rotate 10s infinite linear;
         }
 
-        #language-toggle {
+        .photo-container img {
+            width: 200px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(-50%) translateX(0);
+            }
+            50% {
+                transform: translateY(-45%) translateX(10px);
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(15deg);
+            }
+            50% {
+                transform: rotate(0deg);
+            }
+            75% {
+                transform: rotate(-15deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        .clicked {
+            animation: none; /* Stop de animatie */
+            transform: rotate(0deg); /* Zet de rotatie terug naar 0 */
+        }
+
+        .language-toggle {
             position: fixed;
             top: 10px;
             right: 10px;
             padding: 10px;
             font-size: 16px;
-            background-color: #4CAF50;
+            background-color: #d90606;
             color: white;
             border: none;
             cursor: pointer;
             z-index: 10;
         }
-
-        #language-toggle:hover {
-            background-color: #45a049;
+        .personal-info-fixed {
+            position: fixed;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 12px;
+            font-family: 'Orbitron', sans-serif;
+            color: white;
+            text-align: left;
+            width: 180px;
+            box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.5);
+            z-index: 999;
+            text-shadow: 0 0 5px rgba(255,255,255,0.3);
         }
 
-        @keyframes moveMeteorite {
-            0% {
-                top: -50px;
-                left: 100%;
-            }
-            100% {
-                top: 100%;
-                left: -50px;
+        @media screen and (max-width: 1400px) {
+            .photo-container,
+            .personal-info-fixed {
+                display: none !important;
             }
         }
 
-        @keyframes rotateMeteorite {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
+        @media screen and (max-width: 1000px) {
+            .photo-container,
+            .personal-info-fixed {
+                display: none !important;
             }
         }
 
-        .explosion {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background: url('https://toppng.com/uploads/preview/explosion-pixel-art-115633555132uir2zl9fd.png') no-repeat center center;
-            background-size: cover;
+        .arrow {
+            position: fixed;
+            top: 50%;
+            font-size: 30px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1000;
+            transform: translateY(-50%);
             display: none;
-            z-index: 20;
         }
 
-        @media (max-width: 1800px) {
-            .portfolio-text {
-                font-size: 80px;
-            }
+        .arrow.left {
+            left: 20px;
         }
 
-        @media (max-width: 1600px) {
-            .portfolio-text {
-                font-size: 80px;
-            }
+        .arrow.right {
+            right: 20px;
         }
 
-        @media (max-width: 1400px) {
-            .portfolio-text {
-                font-size: 80px;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            .portfolio-text {
-                font-size: 80px;
+        @media screen and (max-width: 1400px) {
+            .arrow {
+                display: block;
             }
         }
 
@@ -195,186 +203,47 @@
 </head>
 <body>
 
-<button id="language-toggle" onclick="toggleLanguage()">English</button>
-
 <nav>
     <a href="index.html" id="home-link">Home</a>
-    <a href="aboutMe.html">Over mij</a>
-    <a href="projects.html">Projecten</a>
+    <a href="projects.html" id="projects-link">Projecten</a>
 </nav>
 
-<div class="portfolio-text">
-    Portfolio
-</div>
-
-<div class="portfolio-text">
-    <div id="portfolioTitle">Portfolio</div>
-</div>
-
-
-<div class="center-circle">
-    <div class="scrollable-content">
-        <h1 id="greeting">Hallo!</h1>
-        <p id="intro">Ik studeer Creative Media and Game Technologies en ik heb het hier echt naar mijn zin. Ik ben op zoek naar een afstudeerstage waar ik mijn creatieve ideeën kan uitwerken, en waar design en innovatie belangrijk zijn.</p>
-        <p id="hobby">Ik hou ervan om nieuwe dingen te maken, dingen die soms een beetje anders zijn dan wat je normaal ziet. Het is voor mij een uitdaging om mijn ideeën om te zetten in iets dat mensen echt kunnen gebruiken en beleven.</p>
-        <p id="projects">De afgelopen tijd heb ik aan verschillende projecten gewerkt, zoals het maken van een game! In de sectie *"Projecten"* kun je meer zien over wat ik heb gemaakt. Als je meer over mij wilt weten, kun je alles lezen in de *"About Me"* sectie.</p>
-        <p id="website">Ik heb deze website gecreëerd als een portfolio om te laten zien waar mijn interesses liggen en waar ik voor sta. Het is voor mij belangrijk om te laten zien dat ik van design hou en dat ik elke kans die ik krijg, volledig benut.</p>
-        <p id="goals">Ik hoop met mijn werk te inspireren en mijn passie te delen met anderen. Mijn doel is om mijn manier van werken te laten zien, en hopelijk kan ik hiermee een plek vinden bij een bedrijf waar ik verder kan groeien.</p>
-        <p id="thankYou">Bedankt voor het bekijken van mijn portfolio! Ik hoop dat je iets interessants vindt en dat we misschien ooit kunnen samenwerken. Als je meer wilt weten of contact met mij wilt opnemen, aarzel dan niet om dat te doen. Ik kijk ernaar uit om te horen van je!</p>
+<div class="about-me-container">
+    <div class="about-me-text" id="aboutText">
+        <div class="scrollable-content">
+            <h1 id="aboutTitle">Mijn naam is Sem van Veen.</h1>
+            <p id="paragraph1">Ik studeer Creative Media and Game Technologies en ik ben gek op games, design en technologie. Gamen is voor mij meer dan alleen een hobby. Ik hou ervan om mezelf uit te dagen, vooral met games die een sterk verhaal en mooie werelden hebben. *Bloodborne* is daar een goed voorbeeld van. De sfeer en het design in zulke games inspireren mij enorm, en het lijkt me supertof om ooit aan zoiets mee te werken.</p>
+            <p id="paragraph2">Naast gamen ben ik veel bezig met fitness. Het is voor mij belangrijk om zowel fysiek als mentaal gezond te blijven. Sport helpt me niet alleen sterker te worden, maar ook scherp en in balans te blijven.</p>
+            <p id="paragraph3">Ik zoek een afstudeerstage waar ik mijn creativiteit kan inzetten en nieuwe dingen kan leren. Ik wil werken aan toffe projecten waarin design en innovatie belangrijk zijn.</p>
+            <p id="paragraph4">Bekijk gerust mijn projecten om te zien wat ik heb gemaakt. En als je denkt dat we goed bij elkaar passen, neem dan gerust contact op!</p>
+        </div>
     </div>
+
 </div>
 
-<p id="meteorite-text">click op de meteorieten!</p>
+<div class="photo-container" onmousedown="stopRotation(this)" onmouseup="startRotation(this)" onmouseleave="startRotation(this)">
+    <img src="assets/picture/IMG-20250325-WA0034.jpg" alt="Sem's Foto">
+</div>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const meteoriteImage = 'https://opengameart.org/sites/default/files/Asteroid%20Brown.png';
-        const explosionImage = 'assets/gif/vciazx9woomb1.gif';
+    function stopRotation(element) {
+        element.classList.add('clicked');
+    }
+    function startRotation(element) {
+        element.classList.remove('clicked');
+    }
 
-        const meteoriteContainer = document.createElement('div');
-        meteoriteContainer.style.position = 'absolute';
-        meteoriteContainer.style.top = '0';
-        meteoriteContainer.style.left = '0';
-        meteoriteContainer.style.width = '100%';
-        meteoriteContainer.style.height = '100%';
-        meteoriteContainer.style.zIndex = '2';
-        meteoriteContainer.style.pointerEvents = 'none';
-        document.body.appendChild(meteoriteContainer);
-
-        function createMeteorite() {
-            const meteorite = document.createElement('img');
-            meteorite.src = meteoriteImage;
-            meteorite.style.position = 'absolute';
-            meteorite.style.width = '50px';
-            meteorite.style.height = '50px';
-            meteorite.style.transition = 'transform 0.1s linear';
-            meteorite.style.zIndex = '999';
-            meteorite.style.pointerEvents = 'auto';
-
-            const randomX = Math.random() * window.innerWidth;
-            const randomY = Math.random() * window.innerHeight;
-            meteorite.style.left = `${randomX}px`;
-            meteorite.style.top = `${randomY}px`;
-
-            const randomRotationSpeed = Math.random() * 0.5 + 0.1;
-            meteorite.style.transform = `rotate(${Math.random() * 360}deg)`;
-
-            meteoriteContainer.appendChild(meteorite);
-
-            const randomAngle = Math.random() * 360;
-            const randomSpeed = Math.random() * 0.5 + 0.1;
-
-            const velocityX = Math.cos(randomAngle * Math.PI / 180) * randomSpeed;
-            const velocityY = Math.sin(randomAngle * Math.PI / 180) * randomSpeed;
-
-            const moveMeteorite = () => {
-                let currentX = parseFloat(meteorite.style.left);
-                let currentY = parseFloat(meteorite.style.top);
-
-                currentX += velocityX;
-                currentY += velocityY;
-
-                if (currentX > window.innerWidth) currentX = 0;
-                if (currentX < 0) currentX = window.innerWidth;
-                if (currentY > window.innerHeight) currentY = 0;
-                if (currentY < 0) currentY = window.innerHeight;
-
-                meteorite.style.left = `${currentX}px`;
-                meteorite.style.top = `${currentY}px`;
-
-                meteorite.style.transform = `rotate(${parseFloat(meteorite.style.transform.replace('rotate(', '').replace('deg)', '')) + randomRotationSpeed}deg)`;
-
-                requestAnimationFrame(moveMeteorite);
-            };
-
-            moveMeteorite();
-
-            meteorite.addEventListener('click', function () {
-                meteorite.style.visibility = 'hidden';
-
-                const explosion = document.createElement('img');
-                explosion.src = explosionImage;
-                explosion.style.position = 'absolute';
-                explosion.style.width = '100px';
-                explosion.style.height = '100px';
-                explosion.style.left = meteorite.style.left;
-                explosion.style.top = meteorite.style.top;
-                explosion.style.zIndex = '1000';
-                explosion.style.display = 'block';
-                meteoriteContainer.appendChild(explosion);
-
-                setTimeout(function () {
-                    explosion.remove();
-                }, 500);
-            });
-        }
-
-        for (let i = 0; i < 8; i++) {
-            createMeteorite();
-        }
-
-        var storedLanguage = localStorage.getItem("language");
-        if (storedLanguage === "en") {
-            toggleLanguage("en");
-        } else if (storedLanguage === "nl") {
-            toggleLanguage("nl");
-        } else {
-            localStorage.setItem("language", "nl");
-            toggleLanguage("nl");
-        }
-
-        function toggleLanguage(language) {
-            var portfolioTitle = document.getElementById("portfolioTitle");
-            var paragraphs = document.querySelectorAll('.center-circle p');
-            var button = document.getElementById("language-toggle");
-            var navLinks = document.querySelectorAll('nav a');
-            var meteoriteText = document.getElementById("meteorite-text");
-
-            if (language === "en") {
-                portfolioTitle.innerHTML = "Portfolio";
-                paragraphs[0].innerHTML = "I am studying Creative Media and Game Technologies and I really enjoy it here. I am looking for an internship where I can develop my creative ideas, and where design and innovation are important.";
-                paragraphs[1].innerHTML = "I love making new things, things that are sometimes a bit different from what you normally see. It's a challenge for me to turn my ideas into something people can really use and experience.";
-                paragraphs[2].innerHTML = "Recently, I have worked on several projects, such as making a game! In the *'Projects'* section, you can see more of what I have created. If you want to know more about me, you can read all about it in the *'About Me'* section.";
-                paragraphs[3].innerHTML = "I created this website as a portfolio to show where my interests lie and what I stand for. It's important for me to show that I love design and that I make the most of every opportunity I get.";
-                paragraphs[4].innerHTML = "I hope to inspire with my work and share my passion with others. My goal is to show my way of working, and hopefully, I can find a place at a company where I can continue to grow.";
-                paragraphs[5].innerHTML = "Thank you for viewing my portfolio! I hope you find something interesting and that we might collaborate someday. If you want to know more or contact me, feel free to do so. I look forward to hearing from you!";
-
-                navLinks[0].innerHTML = "Home";
-                navLinks[1].innerHTML = "About Me";
-                navLinks[2].innerHTML = "Projects";
-
-                meteoriteText.innerHTML = "Click on the meteorites!";
-
-                button.innerHTML = "Nederlands";
-
-                localStorage.setItem("language", "en");
-            } else {
-                portfolioTitle.innerHTML = "Portfolio";
-                paragraphs[0].innerHTML = "Ik studeer Creative Media and Game Technologies en ik heb het hier echt naar mijn zin. Ik ben op zoek naar een afstudeerstage waar ik mijn creatieve ideeën kan uitwerken, en waar design en innovatie belangrijk zijn.";
-                paragraphs[1].innerHTML = "Ik hou ervan om nieuwe dingen te maken, dingen die soms een beetje anders zijn dan wat je normaal ziet. Het is voor mij een uitdaging om mijn ideeën om te zetten in iets dat mensen echt kunnen gebruiken en beleven.";
-                paragraphs[2].innerHTML = "De afgelopen tijd heb ik aan verschillende projecten gewerkt, zoals het maken van een game! In de sectie *'Projecten'* kun je meer zien over wat ik heb gemaakt. Als je meer over mij wilt weten, kun je alles lezen in de *'About Me'* sectie.";
-                paragraphs[3].innerHTML = "Ik heb deze website gecreëerd als een portfolio om te laten zien waar mijn interesses liggen en waar ik voor sta. Het is voor mij belangrijk om te laten zien dat ik van design hou en dat ik elke kans die ik krijg, volledig benut.";
-                paragraphs[4].innerHTML = "Ik hoop met mijn werk te inspireren en mijn passie te delen met anderen. Mijn doel is om mijn manier van werken te laten zien, en hopelijk kan ik hiermee een plek vinden bij een bedrijf waar ik verder kan groeien.";
-                paragraphs[5].innerHTML = "Bedankt voor het bekijken van mijn portfolio! Ik hoop dat je iets interessants vindt en dat we misschien ooit kunnen samenwerken. Als je meer wilt weten of contact met mij wilt opnemen, aarzel dan niet om dat te doen. Ik kijk ernaar uit om te horen van je!";
-
-                navLinks[0].innerHTML = "Home";
-                navLinks[1].innerHTML = "Over mij";
-                navLinks[2].innerHTML = "Projecten";
-
-                meteoriteText.innerHTML = "Click op de meteorieten!";
-
-                button.innerHTML = "English";
-
-                localStorage.setItem("language", "nl");
-            }
-        }
-
-        document.getElementById('language-toggle').addEventListener('click', function() {
-            var currentLanguage = localStorage.getItem("language");
-            toggleLanguage(currentLanguage === "en" ? "nl" : "en");
-        });
-    });
 </script>
-
+<div class="personal-info-fixed">
+    <p id="personalInfo">
+        <strong id="infoTitle">Persoonlijke Gegevens</strong><br>
+        <span id="addressLine">Adres: Geert van Oorschotstraat 10, 3059TS Rotterdam</span><br>
+        <span id="phoneLine">Tel: 06 46796070</span><br>
+        <span id="dobLine">Geb: 30 okt 2003 (21)</span><br>
+        <a href="mailto:semvanveen@outlook.com" style="color: white;" id="emailLine">semvanveen@outlook.com</a>
+    </p>
+</div>
+<div class="arrow left" id="leftArrow">&#8592;</div>
+<div class="arrow right" id="rightArrow">&#8594;</div>
 </body>
 </html>

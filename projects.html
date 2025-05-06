@@ -14,11 +14,12 @@
             padding: 0;
             background-image: url('assets/gif/1d735ad8eee8350adc96d50e1421ee6d.gif');
             background-size: contain;
-            background-position: center center;
+            background-position: 180% center;
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-color: black;
         }
+
 
         nav {
             background: radial-gradient(circle, rgba(0, 255, 255, 0.85) 0%, rgba(0, 255, 255, 0.65) 20%, rgba(0, 204, 204, 0.45) 40%, rgba(0, 204, 204, 0.25) 60%, rgba(0, 153, 153, 0.15) 80%, rgba(0, 102, 102, 0.05) 90%, rgba(0, 51, 51, 0.001) 100%);
@@ -200,29 +201,14 @@
             margin-bottom: 15px;
         }
 
-        .language-toggle {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            padding: 10px;
-            font-size: 16px;
-            background-color: #00dada;
-            color: white;
-            border: none;
-            cursor: pointer;
-            z-index: 10;
-        }
 
     </style>
 </head>
 <body>
-
-<button class="language-toggle" id="languageToggle">English(?)</button>
 <button class="toggle-btn" id="toggleNavBtn">☰</button>
 
 <nav>
     <a href="index.html">Home</a>
-    <a href="aboutMe.html">Over mij</a>
     <a href="projects.html">Projecten</a>
 </nav>
 
@@ -417,9 +403,9 @@
                 }
 
                 .small-project-image {
-                    width: 215px;  /* Verklaar de breedte van de afbeelding kleiner (bijvoorbeeld 100px) */
-                    height: auto;  /* Houd de verhouding van de afbeelding */
-                    border-radius: 8px; /* Optioneel voor een afgeronde rand */
+                    width: 215px;
+                    height: auto;
+                    border-radius: 8px;
                 }
             </style>
 
@@ -516,7 +502,10 @@
 </div>
 
 <div id="audioGifContainer" style="display: none; position: fixed; bottom: 20px; right: 20px;">
-    <img src="assets/gif/3PkLWL6.gif" alt="Playing GIF" id="audioGif">
+    <img src="https://i.pinimg.com/originals/93/2f/d0/932fd00d9b43753061c47739f0cc777b.gif"
+         alt="Playing GIF"
+         id="audioGif"
+         style="width: 300px; height: auto;">
 </div>
 
 <script>
@@ -561,32 +550,6 @@
             }
         } else {
             imageMessage.textContent = "STOOOOOP!!!";
-        }
-    });
-
-    document.getElementById("languageToggle").addEventListener("click", function() {
-        clickCount++;
-
-        switch (clickCount) {
-            case 1:
-                this.textContent = "oops";
-                break;
-            case 2:
-                this.textContent = "yeaaa";
-                break;
-            case 3:
-                this.textContent = "started bugging trying to translate all this";
-                break;
-            case 4:
-                this.textContent = "sorry";
-                break;
-            case 5:
-                this.textContent = "bye!";
-                break;
-            default:
-                clickCount = 0;
-                this.textContent = "English(?)";
-                break;
         }
     });
 
