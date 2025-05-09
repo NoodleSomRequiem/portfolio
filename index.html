@@ -62,7 +62,7 @@
         }
 
         .about-me-text {
-            font-family: 'Orbitron', sans-serif;
+            font-family: 'Poppins', sans-serif;
             color: #fff;
             background-color: rgba(0, 0, 0, 0.6);
             border: 5px solid rgba(0, 0, 0, 0);
@@ -73,7 +73,7 @@
             border-radius: 15px;
             box-shadow: 0px 0px 30px rgba(255, 0, 0, 0.4);
             font-size: 18px;
-            max-height: 600px;
+            max-height: 500px;
             overflow-y: auto;
             overflow-x: hidden;
             max-width: 1200px;
@@ -141,20 +141,21 @@
         .personal-info-fixed {
             position: fixed;
             top: 50%;
-            right: 14%;
+            right: 10%;
             transform: translateY(-50%);
             background-color: rgba(0, 0, 0, 0.4);
-            padding: 10px;
-            border-radius: 10px;
-            font-size: 12px;
-            font-family: 'Orbitron', sans-serif;
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-family: 'Poppins', sans-serif;
             color: white;
             text-align: left;
-            width: 180px;
-            box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.5);
+            width: 250px;
+            box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.6);
             z-index: 999;
-            text-shadow: 0 0 5px rgba(255,255,255,0.3);
+            text-shadow: 0 0 6px rgba(255,255,255,0.3);
         }
+
 
         /* Voor Webkit browsers (zoals Chrome, Safari, Edge) */
         ::-webkit-scrollbar {
@@ -188,10 +189,15 @@
             border-radius: 10px;
         }
         .highlight {
-            color: #ffe3c7;
+            color: #ffffff;
             font-style: italic;
-            text-shadow: 0px 0px 8px rgb(255, 0, 0);
+            text-shadow:
+                    0 0 4px rgba(255, 0, 0, 0.8),
+                    0 0 8px rgba(255, 0, 0, 0.8),
+                    0 0 12px rgba(255, 0, 0, 0.7),
+                    0 0 16px rgba(255, 0, 0, 0.6);
         }
+
 
         @media screen and (max-width: 1400px) {
             .photo-container,
@@ -251,7 +257,7 @@
             <h1 id="aboutTitle">Sem van Veen.</h1>
             <p>Hallo! Mijn naam is <span class="highlight">Sem van Veen</span>. Ik studeer <span class="highlight">Creative Media and Game Technologies</span> aan de <span class="highlight">Hogeschool Rotterdam (Wijnhaven 107)</span> sinds 2021. Ik ben 21 jaar en zit in mijn laatste jaar van de opleiding.</p>
 
-            <p>Mijn passie ligt bij games, technologie en design. Bloodborne is een grote inspiratiebron voor mij las het gaat om designen, vooral vanwege de sfeer en het visuele als sound design. Naast gamen ben ik fanatiek bezig met fitness om zowel fysiek als mentaal scherp te blijven.</p>
+            <p>Mijn passie ligt bij games, technologie en design. Bloodborne is een grote inspiratiebron voor mij als het gaat om designen, vooral vanwege de sfeer en het visuele als sound design. Naast gamen ben ik fanatiek bezig met fitness om zowel fysiek als mentaal scherp te blijven.</p>
 
             <p>Ik heb door de jaren heen veel technische ervaring opgedaan. Zo heb ik gewerkt met <span class="highlight">React Native</span> voor mobiele apps, <span class="highlight">Laravel</span> voor back-end ontwikkeling in PHP, en de <span class="highlight">MERN-stack (MongoDB, Express, React, Node.js)</span> voor full-stack webapps. Voor het bouwen van <span class="highlight">AI-tools</span> gebruik ik <span class="highlight">API's en modellen zoals Ollama</span>. Mijn huidige project is een AI-chatbot voor PLE die vragen over religie beantwoordt op basis van erkende bronnen zoals de Qur’an en Hadith. Voor meer voorbeelden, zie <a href="projects.html" style="color: white;">mijn projectenpagina</a>.</p>
 
