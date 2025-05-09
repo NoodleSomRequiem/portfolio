@@ -64,15 +64,21 @@
         .about-me-text {
             font-family: 'Orbitron', sans-serif;
             color: #fff;
-            background-color: rgba(255, 0, 0, 0.2);
-            line-height: 1.4;
+            background-color: rgba(0, 0, 0, 0.6);
+            border: 5px solid rgba(0, 0, 0, 0);
+            line-height: 1.5;
             text-align: center;
             text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.75);
-            padding: 15px; /* Minder padding */
+            padding: 20px;
             border-radius: 15px;
             box-shadow: 0px 0px 30px rgba(255, 0, 0, 0.4);
-            font-size: 16px;
-            max-width: 500px;
+            font-size: 18px;
+            max-height: 600px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
         }
 
         .photo-container {
@@ -87,13 +93,24 @@
             animation: float 5s ease-in-out infinite, rotate 10s infinite linear;
         }
 
+        .photo-container {
+            position: absolute;
+            left: 10%;
+            top: 30%;
+            transform: translateY(-50%);
+            padding: 10px;
+            border: 5px solid rgba(0, 0, 0, 0);
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.7);
+            animation: float 5s ease-in-out infinite, rotate 10s infinite linear;
+        }
+
         .photo-container img {
             width: 200px;
             height: auto;
             border-radius: 5px;
         }
-
-
         @keyframes float {
             0%, 100% {
                 transform: translateY(-50%) translateX(0);
@@ -121,27 +138,10 @@
             }
         }
 
-        .clicked {
-            animation: none; /* Stop de animatie */
-            transform: rotate(0deg); /* Zet de rotatie terug naar 0 */
-        }
-
-        .language-toggle {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            padding: 10px;
-            font-size: 16px;
-            background-color: #d90606;
-            color: white;
-            border: none;
-            cursor: pointer;
-            z-index: 10;
-        }
         .personal-info-fixed {
             position: fixed;
             top: 50%;
-            right: 20px;
+            right: 14%;
             transform: translateY(-50%);
             background-color: rgba(0, 0, 0, 0.4);
             padding: 10px;
@@ -154,6 +154,43 @@
             box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.5);
             z-index: 999;
             text-shadow: 0 0 5px rgba(255,255,255,0.3);
+        }
+
+        /* Voor Webkit browsers (zoals Chrome, Safari, Edge) */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 0, 0, 0.4);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.6);
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+        }
+
+        /* Voor Firefox */
+        scrollbar {
+            width: 12px;
+        }
+
+        scrollbar-thumb {
+            background-color: rgba(255, 0, 0, 0.4);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.6);
+        }
+
+        scrollbar-track {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+        }
+        .highlight {
+            color: #ffe3c7;
+            font-style: italic;
+            text-shadow: 0px 0px 8px rgb(255, 0, 0);
         }
 
         @media screen and (max-width: 1400px) {
@@ -211,11 +248,30 @@
 <div class="about-me-container">
     <div class="about-me-text" id="aboutText">
         <div class="scrollable-content">
-            <h1 id="aboutTitle">Mijn naam is Sem van Veen.</h1>
-            <p id="paragraph1">Ik studeer Creative Media and Game Technologies en ik ben gek op games, design en technologie. Gamen is voor mij meer dan alleen een hobby. Ik hou ervan om mezelf uit te dagen, vooral met games die een sterk verhaal en mooie werelden hebben. *Bloodborne* is daar een goed voorbeeld van. De sfeer en het design in zulke games inspireren mij enorm, en het lijkt me supertof om ooit aan zoiets mee te werken.</p>
-            <p id="paragraph2">Naast gamen ben ik veel bezig met fitness. Het is voor mij belangrijk om zowel fysiek als mentaal gezond te blijven. Sport helpt me niet alleen sterker te worden, maar ook scherp en in balans te blijven.</p>
-            <p id="paragraph3">Ik zoek een afstudeerstage waar ik mijn creativiteit kan inzetten en nieuwe dingen kan leren. Ik wil werken aan toffe projecten waarin design en innovatie belangrijk zijn.</p>
-            <p id="paragraph4">Bekijk gerust mijn projecten om te zien wat ik heb gemaakt. En als je denkt dat we goed bij elkaar passen, neem dan gerust contact op!</p>
+            <h1 id="aboutTitle">Sem van Veen.</h1>
+            <p>Hallo! Mijn naam is <span class="highlight">Sem van Veen</span>. Ik studeer <span class="highlight">Creative Media and Game Technologies</span> aan de <span class="highlight">Hogeschool Rotterdam (Wijnhaven 107)</span> sinds 2021. Ik ben 21 jaar en zit in mijn laatste jaar van de opleiding.</p>
+
+            <p>Mijn passie ligt bij games, technologie en design. Bloodborne is een grote inspiratiebron voor mij las het gaat om designen, vooral vanwege de sfeer en het visuele als sound design. Naast gamen ben ik fanatiek bezig met fitness om zowel fysiek als mentaal scherp te blijven.</p>
+
+            <p>Ik heb door de jaren heen veel technische ervaring opgedaan. Zo heb ik gewerkt met <span class="highlight">React Native</span> voor mobiele apps, <span class="highlight">Laravel</span> voor back-end ontwikkeling in PHP, en de <span class="highlight">MERN-stack (MongoDB, Express, React, Node.js)</span> voor full-stack webapps. Voor het bouwen van <span class="highlight">AI-tools</span> gebruik ik <span class="highlight">API's en modellen zoals Ollama</span>. Mijn huidige project is een AI-chatbot voor PLE die vragen over religie beantwoordt op basis van erkende bronnen zoals de Qur’an en Hadith. Voor meer voorbeelden, zie <a href="projects.html" style="color: white;">mijn projectenpagina</a>.</p>
+
+            <p>Ik heb ook basiskennis van <span class="highlight">Unity</span>, sound design en level design, opgedaan via mijn minor en diverse projecten. Mijn programmeerervaring is veelzijdig, van back-end tot front-end en mobiele apps.</p>
+
+            <p>Werkervaring:
+            <ul>
+                <li>Albert Heijn - Vakkenvuller (15 jaar)</li>
+                <li>Thuisbezorgd - Bezorger (16-17 jaar)</li>
+                <li>SS Rotterdam - Afwasser (18-19 jaar)</li>
+                <li>Stage bij Vectory 3 (3e leerjaar)</li>
+                <li>Huidig: Werk bij Verwiel & Wijngaard (vanaf 20 jaar)</li>
+            </ul>
+            </p>
+
+            <p>Ik spreek vloeiend <span class="highlight">Nederlands en Engels</span>, zowel mondeling als schriftelijk.</p>
+
+            <p>Ik heb mijn <span class="highlight">propedeuse</span> behaald, mijn stage succesvol afgerond en hoef geen herkansingen meer te doen in mijn studie, ik heb dus alles naast mijn huidige project gehaald.</p>
+
+            <p>Ik ben op zoek naar een afstudeerstage waarin ik mijn creativiteit en technische vaardigheden kan inzetten om te werken aan innovatieve projecten. Interesse? Neem gerust contact op!</p>
         </div>
     </div>
 
